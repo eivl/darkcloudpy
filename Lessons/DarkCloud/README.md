@@ -16,9 +16,13 @@ Six playable team members each with their own unique abilities, weapons, skills 
 
 Detailed weapon system allows you to change and increase your weapons strength and damage.
 
+# learn
+
 In The fourth volume learn lists, dictionaries & tuples are introduced in very interactive ways and open up more opportunities for more vast ways to store
 values and data in more efficient ways! Don't worry this does not mean things will get harder but make the coding process way easier for you to
 understand and make your code more organized than it was before. Lists are able to store variables, values of any data type between it's '[]' and
 so does dictionaries and tuples, although tuples use an optimization process behind the scenes that make your code run faster there are no wrong
 answers. You will learn alot of new functionalities in this project demo and advance to unlock your full potential in programming as a whole. Various
 methods, functions, tips and tricks to use in your coding to get a better understanding of python and fully diverse yourself into the code!
+
+# visual studio code screenshots
