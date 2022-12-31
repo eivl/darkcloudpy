@@ -1,5 +1,4 @@
-README.md
-DARKCLOUD
+#DARKCLOUD
 ![68r0k1oxawi31](https://user-images.githubusercontent.com/87259615/210156439-7b90c024-6d42-4b9b-ab5a-458f3119ee25.png)
 
 Two great continents, one an advanced civilization driven by progress and technology the other, where nature is the center of all existence and everyone lives harmoniously side by side. Two cultures that have never had contact with each other…until now.
