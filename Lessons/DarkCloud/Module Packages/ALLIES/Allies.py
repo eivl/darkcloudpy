@@ -93,30 +93,62 @@ class Allies(): # player attributes/elements
     # docstring
     """The Allies class is responsible for keeping the allies's usernames, attributes, Levels, Experience points and much more like ablities.
     """
+    # globals
+    global ally_name
+    global ally_health
+    global ally_hunger
+    global ally_thirst
+    global ally_level
+    global ally_xp
     
     # player fields/attributes
-    name = str # default name set to 'Xiao'
-    health = 100 # default player healh set to 100
-    hunger = 100 # default player hunger set to 100
-    thirst = 100 # default player thirst set to 100
-    level = 1 # default player level set to 1
-    xp = 0 # default xp set to 0 xp
+    ally_name = str # ally name identifier
+    ally_health = 100 # default player healh set to 100
+    ally_hunger = 100 # default player hunger set to 100
+    ally_thirst = 100 # default player thirst set to 100
+    ally_level = 1 # default player level set to 1
+    ally_xp = 0 # default xp set to 0 xp
     
     # log info
     logging.info("player fields/attributes created")
     
     # class methods
+    def __ally_name__(self):
+        
+        return ally_name 
+    def __ally_health__(self):
+        
+        return str(ally_health)
+    def __ally_hunger__(self): 
+        
+        return ally_hunger 
+    def __ally_thirst__(self): 
+        
+        return ally_thirst 
+    def __ally_experience__(self): 
+        
+        return ally_xp
+    
+    
     # < - will think of some behaviors in the future
     pass
 
 # variables
-health = Allies.health
-hunger = Allies.hunger
-thirst = Allies.thirst
-level = Allies.level
-experience = Allies.xp
+health = ally_health
+hunger = ally_hunger
+thirst = ally_thirst
+level = ally_level
+experience = ally_xp
+
+
 
 # object instances
 XIAO = Allies("Xiao", health, hunger, thirst, level, experience,)
 RUBY = Allies("Ruby", health, hunger, thirst, level, experience,)
 GORO = Allies("Goro", health, hunger, thirst, level, experience,)
+
+# tuples
+ALLY_ATTR = (health, hunger, thirst, level, experience)
+
+
+XIAO.__name__()

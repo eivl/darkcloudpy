@@ -93,28 +93,73 @@ class Player(): # player attributes/elements
     # docstring
     """The PlayerTraits class is responsible for keeping the user's username, attributes, Level, Experience points and much more like ablities
     """
+    # globals
+    global player_name
+    global player_health
+    global player_hunger
+    global player_thirst
+    global player_level
+    global player_exp
+    global player_status
+    
+    # player constants
+    default_nickname = "Toan"
+    full_health = 100
+    full_hungry = 100
+    quenched_thirst = 100
+    default_level = 1
+    default_xp = 0
+    default_status = None
+    # status constants
+    
     
     # player fields/attributes
-    player_nickname = name = 'toan' # default name set to 'Toan'
-    player_health = health = 100 # default player healh set to 100
-    player_hunger = hunger = 100 # default player hunger set to 100
-    player_thirst = thirst = 100 # default player thirst set to 100
-    player_level = level = 1 # default player level set to 1
-    player_exp = xp = 0 # default xp set to 0 xp
+    player_name = default_nickname # default name set to 'Toan'
+    player_health = full_health # default player healh set to 100
+    player_hunger = full_hungry # default player hunger set to 100
+    player_thirst = quenched_thirst # default player thirst set to 100
+    player_level = default_level # default player level set to 1
+    player_exp = default_xp # default xp set to 0 xp
+    player_status: default_status # default status is None
+    
     
     logging.info("player fields/attributes created")
     
     # class methods
+    def __player_name__(self): 
+        
+        return player_name
+    def __player_health__(self): 
+        
+        return player_health
+    def __player_status__(self): 
+        
+        return player_status
+    def __player_hunger__(self): 
+        
+        return player_hunger
+    def __player_thirst__(self): 
+        
+        return player_thirst
+    def __player_level__(self): 
+        
+        return player_level
+    def __player_experience__(self): 
+        
+        return player_exp
     
+    
+    # < - will think of some behaviors in the future
     pass
 
+
 # variables
-NICKNAME = Player.player_nickname
-health = Player.player_health
-hunger = Player.player_hunger
-thirst = Player.player_thirst
-level = Player.player_level
-experience = Player.player_exp
+NICKNAME = Player.__player_name__()
+health = Player.__player_health__()
+hunger = Player.__player_hunger__()
+thirst = Player.__player_thirst__()
+level = Player.__player_level__()
+experience = Player.__player_experience__()
 
 # object instances
 player = Player(NICKNAME, health, hunger, thirst, level, experience)
