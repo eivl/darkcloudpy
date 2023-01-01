@@ -1,5 +1,5 @@
 # importing modules
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import logging, logging.handlers
 from logging.handlers import SMTPHandler
 
@@ -101,13 +101,19 @@ class Allies(): # player attributes/elements
     global ally_level
     global ally_xp
     
-    # player fields/attributes
+    # ally fields/attributes
     ally_name = str # ally name identifier
-    ally_health = 100 # default player healh set to 100
-    ally_hunger = 100 # default player hunger set to 100
-    ally_thirst = 100 # default player thirst set to 100
-    ally_level = 1 # default player level set to 1
-    ally_xp = 0 # default xp set to 0 xp
+    ally_health: int = field(default_factory=100) # default player healh set to 100
+    ally_hunger: int = field(default_factory=100) # default player hunger set to 100
+    ally_thirst: int = field(default_factory=0) # default player thirst set to 100
+    ally_level: int = field(default_factory=1) # default player level set to 1
+    ally_xp: int = field(default_factory=0) # default xp set to 0 xp
+    
+    # ally well being status's
+    ally_hunger_active_status: bool = field(default_factory=True)
+    ally_thirst_active_status: bool = field(default_factory=True)
+    
+    
     
     # log info
     logging.info("player fields/attributes created")
@@ -140,15 +146,7 @@ thirst = ally_thirst
 level = ally_level
 experience = ally_xp
 
-
-
-# object instances
+# object instances/initializers/constructors
 XIAO = Allies("Xiao", health, hunger, thirst, level, experience,)
 RUBY = Allies("Ruby", health, hunger, thirst, level, experience,)
 GORO = Allies("Goro", health, hunger, thirst, level, experience,)
-
-# tuples
-ALLY_ATTR = (health, hunger, thirst, level, experience)
-
-
-XIAO.__name__()
