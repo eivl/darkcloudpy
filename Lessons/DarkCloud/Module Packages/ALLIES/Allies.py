@@ -93,13 +93,17 @@ class Allies(): # player attributes/elements
     # docstring
     """The Allies class is responsible for keeping the allies's usernames, attributes, Levels, Experience points and much more like ablities.
     """
-    # globals
+    # global ally traits variables
     global ally_name
     global ally_health
     global ally_hunger
     global ally_thirst
     global ally_level
     global ally_xp
+    
+    # global ally trait status variables
+    global ally_hunger_active_status
+    global ally_thirst_active_status
     
     # ally fields/attributes
     ally_name = str # ally name identifier
