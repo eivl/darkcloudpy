@@ -112,8 +112,16 @@ class Player(): # player attributes/elements
     default_level = 1
     default_xp = 0
     default_status = None
-    # status constants
     
+    # player status variables
+    poison_condition = False
+    gooey_condition = False
+    curse_condition = False
+    pumped_up_condition = False
+    stop_condition = False
+    
+    # lists, tuples, dicts
+    player_condition = [poison_condition , gooey_condition , curse_condition , pumped_up_condition, stop_condition ]
     
     # player fields/attributes
     player_name = default_nickname # default name set to 'Toan'
