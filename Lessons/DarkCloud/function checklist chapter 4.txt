@@ -1,0 +1,111 @@
+
+
+                        ░██████╗░███████╗███╗░░██╗███████╗░██████╗██╗░██████╗░██████╗░██╗██████╗░
+                        ██╔════╝░██╔════╝████╗░██║██╔════╝██╔════╝██║██╔════╝██╔════╝░██║██╔══██╗
+                        ██║░░██╗░█████╗░░██╔██╗██║█████╗░░╚█████╗░██║╚█████╗░██║░░██╗░██║██████╔╝
+                        ██║░░╚██╗██╔══╝░░██║╚████║██╔══╝░░░╚═══██╗██║░╚═══██╗██║░░╚██╗██║██╔══██╗
+                        ╚██████╔╝███████╗██║░╚███║███████╗██████╔╝██║██████╔╝╚██████╔╝██║██║░░██║
+                        ░╚═════╝░╚══════╝╚═╝░░╚══╝╚══════╝╚═════╝░╚═╝╚═════╝░░╚═════╝░╚═╝╚═╝░░╚═╝
+
+
+                            ██╗░░░░░███████╗░██████╗░██████╗░█████╗░███╗░░██╗░██████╗
+                            ██║░░░░░██╔════╝██╔════╝██╔════╝██╔══██╗████╗░██║██╔════╝
+                            ██║░░░░░█████╗░░╚█████╗░╚█████╗░██║░░██║██╔██╗██║╚█████╗░
+                            ██║░░░░░██╔══╝░░░╚═══██╗░╚═══██╗██║░░██║██║╚████║░╚═══██╗
+                            ███████╗███████╗██████╔╝██████╔╝╚█████╔╝██║░╚███║██████╔╝
+                            ╚══════╝╚══════╝╚═════╝░╚═════╝░░╚════╝░╚═╝░░╚══╝╚═════╝░
+
+
+                            ██╗░░░██╗░█████╗░██╗░░░░░██╗░░░██╗███╗░░░███╗███████╗  ░░██╗██╗
+                            ██║░░░██║██╔══██╗██║░░░░░██║░░░██║████╗░████║██╔════╝  ░██╔╝██║
+                            ╚██╗░██╔╝██║░░██║██║░░░░░██║░░░██║██╔████╔██║█████╗░░  ██╔╝░██║
+                            ░╚████╔╝░██║░░██║██║░░░░░██║░░░██║██║╚██╔╝██║██╔══╝░░  ███████║
+                            ░░╚██╔╝░░╚█████╔╝███████╗╚██████╔╝██║░╚═╝░██║███████╗  ╚════██║
+                            ░░░╚═╝░░░░╚════╝░╚══════╝░╚═════╝░╚═╝░░░░░╚═╝╚══════╝  ░░░░░╚═╝
+
+                            █▀▀ █░█ █▄░█ █▀▀ ▀█▀ █ █▀█ █▄░█   █▀▀ █░█ █▀▀ █▀▀ █▄▀ █░░ █ █▀ ▀█▀
+                            █▀░ █▄█ █░▀█ █▄▄ ░█░ █ █▄█ █░▀█   █▄▄ █▀█ ██▄ █▄▄ █░█ █▄▄ █ ▄█ ░█░
+
+        A checklist for the new functionalities you will be learning this volume, put a value into the [] like this - > [x]
+        to mark as finished and demolish and enhance your coding blade and knowledge, if your unsure of what a functionality does
+        in the list make sure to search online for information and tutorials on what they do.
+
+# lists []
+# List indexes []
+# negitive List indexes []
+# List Slices []
+# len() on list []
+# overwrite List indexes with assignment statments []
+# List Concatenation []
+# List Replication []
+# Removing Values from List indexes with del Statements []
+# Use for Loops with Lists []
+# The in and not in Operators []
+
+# The Multiple Assignment Trick []
+"""
+The multiple assignment trick (technically called tuple unpacking) is a shortcut
+that lets you assign multiple variables with the values in a list in one line of code. 
+
+So instead of doing this:
+>>> cat = ['fat', 'gray', 'loud']
+>>> size = cat[0]
+>>> color = cat[1]
+>>> disposition = cat[2]
+
+you could type this line of code:
+>>> cat = ['fat', 'gray', 'loud']
+>>> size, color, disposition = cat
+"""
+
+# enumerate() []
+
+# Use the enumerate() Function with Lists []
+"""
+Using the enumerate() Function with Lists
+Instead of using the range(len(someList)) technique with a for loop to obtain the integer index of the items in the list, you can call the enumerate() function instead. On each iteration of the loop, enumerate() will return two values: the index of the item in the list, and the item in the list itself. For example, this code is equivalent to the code in the “Using for Loops with Lists” on page 84:
+
+>>> supplies = ['pens', 'staplers', 'flamethrowers', 'binders']
+>>> for index, item in enumerate(supplies):
+...     print('Index ' + str(index) + ' in supplies is: ' + item)
+
+Index 0 in supplies is: pens
+Index 1 in supplies is: staplers
+Index 2 in supplies is: flamethrowers
+Index 3 in supplies is: binders
+
+The enumerate() function is useful if you need both the item and the item’s index in the loop’s block.
+"""
+
+# random.choice() [] # used with lists
+# random.shuffle() [] # used with lists
+
+# Augmented Assignment Operators []
+
+"""
+Augmented Assignment Operators
+When assigning a value to a variable, you will frequently use the variable itself. For example, after assigning 42 to the variable spam, you would increase the value in spam by 1 with the following code:
+
+>>> spam = 42
+>>> spam = spam + 1
+>>> spam
+43
+
+As a shortcut, you can use the augmented assignment operator += to do the same thing:
+
+>>> spam = 42
+>>> spam += 1
+>>> spam
+43
+"""
+
+# index() method []
+# append() method []
+# insert() method() []
+# remove() Method []
+# sort() Method []
+# reverse() Method []
+# id() Function []
+# import copy module []
+# The copy Module’s copy() and deepcopy() Functions []
+# del Statement []
