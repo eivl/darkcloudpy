@@ -1,4 +1,4 @@
-# import modules
+# from import statements
 from dataclasses import dataclass, field
 
 """ GenesisGirs typical logger preset
@@ -105,20 +105,20 @@ class Georama:
     georama_percentage_backup = 0
     request_percentage_backup = 0
     
-    # georama fields/attributes
+    # fields/attr
     atla_creator: str = field(default="Fairy King")
     georama_analysis: int or float = field(default_factory=str(georama_percentage)+"%") # default georama analysis set to 0
     request_analysis: int or float = field(default_factory=str(request_percentage)+"%") # default request analysis set to 0
     
-    # exception handle
+    # exception handle to check for invalid percentage values
     try: # check for exceptions
         
         # backup percentages
         georama_percentage_backup = georama_percentage
         request_percentage_backup = request_percentage
         
-        # reset percent flow controls
-        while True: # limit percentages
+        # check percentages for invalid values
+        while True: # check percentages
             
             # check values
             georama_percentage
@@ -139,33 +139,36 @@ class Georama:
         logger.error("one or more of the gemorama percentages reached under the expected values attempting to resolve!")
         
         # variable
-        attempts = 0
+        attempt_counter = 0 # keeps track of attempts iterated to fix percentage value
         
         while True: # reset percent values
-            # reset georama percentages
             
             # check values
             georama_percentage
+            georama_percentage_backup
             request_percentage
-
+            request_percentage_backup
+            
+            # flows
             if georama_percentage and request_percentage == range(0,101): # percentage falls in range of values
-                # load backup percent
-                georama_percentage = georama_percentage_backup
-                request_percentage = request_percentage_backup
-                
-                attempts = 0 # reset attempt int
                 
                 # [INFO] [20]
-                logger.info(f"values of variables 'georama_percentage' and 'request_percentage' have been reset to 0. loop satisfied attempts [str({attempts})]")
+                logger.info(f"values of variables 'georama_percentage' and 'request_percentage' have been reset to 0. loop satisfied attempts [{attempt_counter}]")
+                attempts = 0 # reset attempt int
                 break
                 pass
             
             elif georama_percentage and request_percentage != range(0, 101): # percentage does not fall in range of values
-                attempts += 1 # increase attempt by 1
+                
+                # overwrite percentages w/backup variables
+                georama_percentage = georama_percentage_backup
+                request_percentage = request_percentage_backup
+                
+                attempt_counter += 1 # increase attempt by 1
                 continue # re-iterate while loop
             
             # [DEBUG] [10]
-            logger.debug("Attempting to reset values of variables 'georama_percentage' and 'request_percentage' to 0. looping until satisfied")
+            logger.debug(f"Attempting to reset values of variables 'georama_percentage' and 'request_percentage' to 0. looping until satisfied, current attempts [{attempt_counter}]")
 
 # objects/constructors
 GEORAMA = Georama()
