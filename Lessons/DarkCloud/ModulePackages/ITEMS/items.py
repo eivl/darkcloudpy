@@ -88,8 +88,10 @@ logger = logger()
 import sys
 from dataclasses import dataclass, field
 from ModulePackages.PLAYER.Player import *
+from ModulePackages.LOCATIONS.dark_cloud_locations import *
 
 # lists, tuples, dicts
+#types
 CATEGORY_TYPE = ("Powder", 
                 "Recovery Item",
                     "Throwing Item",
@@ -98,21 +100,27 @@ CATEGORY_TYPE = ("Powder",
                                 "Power Up Item",
                                     "Crafting Material",)
 
+SHOPS = [GAFFERS_BUGGY,
+        FRESHEN_UP_WATERY, 
+        FAIRY_KING]
+
 @dataclass(frozen=True)
 class Items:
     
     #globals
     global CATEGORY_TYPE
     
-    # fields/attrs
+    # fields/attributes
     name: str = field(repr=True) # item name
-    description: str = field(repr=True)
-    hp_restore: int or bool = field(repr=True) # health restore points
-    whp_restore: int = field(repr=True) # weapon restore points
-    buy_price: int or float = field(repr=True)
-    sell_price: int or float = field(repr=True)
-    item_type: str = field(repr=True)
+    inventory_description: str = field(default_factory= None,repr=True)
+    hp_restore: int or bool = field(default_factory= None,repr=True) # health restore points
+    whp_restore: int = field(default_factory= None,repr=True) # weapon restore points
+    buy_price: int or float = field(default_factory= None,repr=True)
+    sell_price: int or float = field(default_factory= None,repr=True)
+    item_type: str = field(default_factory= None,repr=True)
     dps: int = field(default_factory=0) # damage points
+    attribute: int = field(default_factory=None) # damage points
+    shop: str = field(default_factory=None, repr=True) # itemm shop location
     pass
 
 # object instances
@@ -136,8 +144,51 @@ ANTIDOTE_DRINK = Items("Antidote Drink", "Drinking it neutralizes the poison in 
 SOAP = Items("Soap", "Releases from gooey condition.", False, None, None, 50, CATEGORY_TYPE[1]) # cures gooey condition
 HOLY_WATER = Items("Holy Water", "Releases from spell. Causes major damage to the undead.", False, None, None, 60, CATEGORY_TYPE[1], 1000) # cures curse condition
 MIGHTY_HEALING = Items("Mighty Healing", "Heals all conditions.", False, None, None, 150, CATEGORY_TYPE[1]) # cures all conditions
-STAMINA_DRINK = Items("Stamina Drink", "Drinking it increases power. Ability temporarily increases.", True, None, None, 150, CATEGORY_TYPE[1]) # Grants Pumped Up condition.
-THROBBING_CHERRY= Items("Throbbing Cherry", "Play tag to stop the enemy. Use from menu to cure stop.", False, None, None, 150, CATEGORY_TYPE[1]) # Cures Stop.
+STAMINA_DRINK = Items( # <- Grants Pumped Up condition.
+# item name
+name="Stamina Drink",
+
+# item description
+inventory_description="Drinking it increases power. Ability temporarily increases.", 
+
+# health point restore values
+hp_restore= True, 
+
+# weapon restore point values
+whp_restore= None, 
+
+# item price
+buy_price= None, 
+
+# item selling price
+sell_price= 150, 
+
+# item types
+item_type= CATEGORY_TYPE[1]) 
+THROBBING_CHERRY= Items( # <- Cures Stop.
+# item name
+name= "Throbbing Cherry", 
+
+# item description
+inventory_description= "Play tag to stop the enemy. Use from menu to cure stop.", 
+
+# health point restore values
+hp_restore= False,
+
+# weapon restore point values
+whp_restore= None, 
+
+# item price
+buy_price= None, 
+
+# item selling price
+sell_price= 150, 
+
+# item types
+item_type= CATEGORY_TYPE[1]) 
+
+# attachments
+attack_attr = Items("Attack+1/+2/+3", "Increases weapon attack power.", None, None , 300, 150, CATEGORY_TYPE[4], None, 5, SHOPS[0:])
 
 
 # item list, tuples, dictionaries
@@ -189,3 +240,111 @@ RECOVERY_ITEMS = ( # recovery items
     #cleansing
     SOAP,
     MIGHTY_HEALING,)
+
+""" <- darkcloud recovery item documentaion
+
+█▀█ █▀▀ █▀▀ █▀█ █░█ █▀▀ █▀█ █▄█   █ ▀█▀ █▀▀ █▀▄▀█ █▀
+█▀▄ ██▄ █▄▄ █▄█ ▀▄▀ ██▄ █▀▄ ░█░   █ ░█░ ██▄ █░▀░█ ▄█
+
+Recovery items are consumable items which restore hit points and abnormal status in Dark Cloud and Dark Chronicle. Health items typically appear as 
+simple food items, which heal small amounts, ranging to more complex and larger types of food that in turn heal larger amounts. Some types of food
+have a minor negative side effect, such causing the thirst status. Water-based items on the other hand exist to fill the thirst meter exclusive to 
+Dark Cloud, where as in Dark Chronicle they only heal the aforementioned thirst status.
+
+Lastly are status restoring items, most of which heal either one specific condition or all of them at once, such as the rare Mighty Healing. 
+Stamina Drink is technically not a recovery item and instead grants a temporary statistical power-up, but does actually cure status conditions 
+completely once it wears off. Note that a few of the status-restoring items can also be used offensively against monsters, making them throwing items.
+
+To use a recovery item, select it and drag it to the intended recipient, who must be hurt or under a status effect for it to work. 
+It is also possible to place any recovery item in an active item slot, which will allow you to use it during combat at will. Most of these items 
+can be typically found inside shops, treasure chests, miracle chests, by stealing from monsters, or slaying those that drop any.p
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

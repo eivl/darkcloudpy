@@ -30,10 +30,10 @@
         to mark as finished and demolish and enhance your coding blade and knowledge, if your unsure of what a functionality does
         in the list make sure to search online for information and tutorials on what they do.
 
-# lists []
-# List indexes []
+# lists [x]
+# List indexes [x]
 # negitive List indexes []
-# List Slices []
+# List Slices [x]
 # len() on list []
 # overwrite List indexes with assignment statments []
 # List Concatenation []
@@ -42,7 +42,7 @@
 # Use for Loops with Lists []
 # The in and not in Operators []
 
-# The Multiple Assignment Trick []
+# The Multiple Assignment Trick [x]
 """
 The multiple assignment trick (technically called tuple unpacking) is a shortcut
 that lets you assign multiple variables with the values in a list in one line of code. 
