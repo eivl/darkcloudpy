@@ -88,61 +88,35 @@ logger = logger()
 
 # dataclasses
 @dataclass
-class Player(): # player attributes/elements
+class Allies(): # player attributes/elements
     
     # docstring
-    """The PlayerTraits class is responsible for keeping the user's username, attributes, Level, Experience points and much more like ablities
+    """The Allies class is responsible for keeping the allies's usernames, attributes, Levels, Experience points and much more like ablities.
     """
     
     # player fields/attributes
-    player_nickname = name = 'toan' # default name set to 'Toan'
-    player_health = health = 100 # default player healh set to 100
-    player_hunger = hunger = 100 # default player hunger set to 100
-    player_thirst = thirst = 100 # default player thirst set to 100
-    player_level = level = 1 # default player level set to 1
-    player_exp = xp = 0 # default xp set to 0 xp
+    name = str # default name set to 'Xiao'
+    health = 100 # default player healh set to 100
+    hunger = 100 # default player hunger set to 100
+    thirst = 100 # default player thirst set to 100
+    level = 1 # default player level set to 1
+    xp = 0 # default xp set to 0 xp
     
+    # log info
     logging.info("player fields/attributes created")
     
     # class methods
-    
+    # < - will think of some behaviors in the future
     pass
 
 # variables
-NICKNAME = Player.player_nickname
-health = Player.player_health
-hunger = Player.player_hunger
-thirst = Player.player_thirst
-level = Player.player_level
-experience = Player.player_exp
+health = Allies.health
+hunger = Allies.hunger
+thirst = Allies.thirst
+level = Allies.level
+experience = Allies.xp
 
 # object instances
-player = Player(NICKNAME, health, hunger, thirst, level, experience)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+XIAO = Allies("Xiao", health, hunger, thirst, level, experience,)
+RUBY = Allies("Ruby", health, hunger, thirst, level, experience,)
+GORO = Allies("Goro", health, hunger, thirst, level, experience,)
