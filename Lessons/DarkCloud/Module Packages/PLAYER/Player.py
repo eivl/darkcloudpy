@@ -93,13 +93,15 @@ class Player(): # player attributes/elements
     # docstring
     """The PlayerTraits class is responsible for keeping the user's username, attributes, Level, Experience points and much more like ablities
     """
-    # globals
+    # global player trait variables
     global player_name
     global player_health
     global player_hunger
     global player_thirst
     global player_level
     global player_exp
+    
+    # global player trait status variables
     global player_status
     
     # player constants
