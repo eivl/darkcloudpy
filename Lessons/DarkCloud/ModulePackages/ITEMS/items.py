@@ -90,7 +90,59 @@ from dataclasses import dataclass, field
 from ModulePackages.PLAYER.Player import *
 from ModulePackages.LOCATIONS.dark_cloud_locations import *
 
+# variables/constants
+# attribute items
+
+# attack attributes
+attack_1_attr = ("Attack+1", 1)
+attack_1_attr_name, attack_1_attr_int = attack_1_attr
+
+attack_2_attr = ("Attack+2", 2)
+attack_2_attr_name, attack_2_attr_int = attack_2_attr
+
+attack_3_attr = ("Attack+3", 3)
+attack_3_attr_name, attack_3_attr_int = attack_3_attr
+
+
+
+# endurance attributes
+endurance_1_attr = ("Endurance+1", 1)
+endurance_1_attr_name, endurance_1_attr_int = endurance_1_attr
+
+endurance_2_attr = ("Endurance+2", 2)
+endurance_2_attr_name, endurance_2_attr_int = endurance_2_attr
+
+endurance_3_attr = ("Endurance+3", 3)
+endurance_3_attr_name, endurance_3_attr_int = endurance_3_attr
+
+# speed attributes
+speed_1_attr = ("Speed+1", 1)
+speed_1_attr_name, speed_1_attr_int = speed_1_attr
+
+speed_2_attr = ("Speed+2", 2)
+speed_2_attr_name, speed_2_attr_int = speed_2_attr
+
+speed_3_attr = ("Speed+3", 3)
+speed_3_attr_name, speed_3_attr_int = speed_3_attr
+
+# final attributes
+attack_attribute = (attack_1_attr, attack_2_attr, attack_3_attr)
+endurance_attribute = (endurance_1_attr, endurance_2_attr, endurance_3_attr)
+speed_attribute = (speed_1_attr, speed_2_attr, speed_3_attr)
+
+
 # lists, tuples, dicts
+# item attributes
+attack_attribute = (attack_1_attr, attack_2_attr, attack_3_attr)
+endurance_attribute = (endurance_1_attr, endurance_2_attr, endurance_3_attr)
+speed_attribute = (speed_1_attr, speed_2_attr, speed_3_attr)
+
+# attributes
+item_attrs = (
+        attack_attribute, 
+            endurance_attribute, 
+                speed_attribute)
+
 #types
 CATEGORY_TYPE = ("Powder", 
                 "Recovery Item",
@@ -119,7 +171,7 @@ class Items:
     sell_price: int or float = field(default_factory= None,repr=True)
     item_type: str = field(default_factory= None,repr=True)
     dps: int = field(default_factory=0) # damage points
-    attribute: int = field(default_factory=None) # damage points
+    attribute_buff: int = field(default_factory=None) # damage points
     shop: str = field(default_factory=None, repr=True) # itemm shop location
     pass
 
@@ -166,30 +218,40 @@ sell_price= 150,
 # item types
 item_type= CATEGORY_TYPE[1]) 
 THROBBING_CHERRY= Items( # <- Cures Stop.
-# item name
+# data
 name= "Throbbing Cherry", 
-
-# item description
 inventory_description= "Play tag to stop the enemy. Use from menu to cure stop.", 
-
-# health point restore values
 hp_restore= False,
-
-# weapon restore point values
 whp_restore= None, 
-
-# item price
 buy_price= None, 
-
-# item selling price
 sell_price= 150, 
-
-# item types
 item_type= CATEGORY_TYPE[1]) 
 
 # attachments
-attack_attr = Items("Attack+1/+2/+3", "Increases weapon attack power.", None, None , 300, 150, CATEGORY_TYPE[4], None, 5, SHOPS[0:])
-
+attack_attr = Items(
+# data
+name=attack_attribute[0], 
+inventory_description="Increases weapon attack power.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+#attribute_buff= N0ne,
+shop= SHOPS[0:])
+endurance_attr = Items(
+# data
+name=endurance_attribute[0], 
+inventory_description="Increases weapon attack power.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 260,
+sell_price= 130,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+#attribute_buff= None,
+shop= SHOPS[0:])
 
 # item list, tuples, dictionaries
 POWDERS = ( # powder items
