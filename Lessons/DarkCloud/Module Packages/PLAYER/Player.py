@@ -1,5 +1,5 @@
 # importing modules
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import logging, logging.handlers
 from logging.handlers import SMTPHandler
 
@@ -105,7 +105,7 @@ class Player(): # player attributes/elements
     # player constants
     default_nickname = "Toan"
     full_health = 100
-    full_hungry = 100
+    full_hunger = 100
     quenched_thirst = 100
     default_level = 1
     default_xp = 0
@@ -115,12 +115,14 @@ class Player(): # player attributes/elements
     
     # player fields/attributes
     player_name = default_nickname # default name set to 'Toan'
-    player_health = full_health # default player healh set to 100
-    player_hunger = full_hungry # default player hunger set to 100
-    player_thirst = quenched_thirst # default player thirst set to 100
-    player_level = default_level # default player level set to 1
-    player_exp = default_xp # default xp set to 0 xp
-    player_status: default_status # default status is None
+    player_health: int  = field(default_factory=full_health) # default player healh set to 100
+    player_hunger: int  = field(default_factory=full_hunger) # default player hunger set to 100
+    player_thirst: int  = field(default_factory=quenched_thirst) # default player thirst set to 100
+    player_level: int  = field(default_factory=default_level) # default player level set to 1
+    player_exp: int  = field(default_factory=default_xp) # default xp set to 0 xp
+    
+    # player status field
+    player_status: str  = field(default_factory=default_status)# default status is None
     
     
     logging.info("player fields/attributes created")
