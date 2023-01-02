@@ -90,11 +90,11 @@ from dataclasses import dataclass, field
 from ModulePackages.PLAYER.Player import *
 from ModulePackages.LOCATIONS.dark_cloud_locations import *
 
-# variables/constants
-# attribute items
-
-# attack attributes
-attack_1_attr = ("Attack+1", 1)
+"""🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 """
+# multiple assignment attribute staging
+"""ⲁⲧⲧꞅⲓⲃ𐌵ⲧⲉ 𝛓ⲩⲛⲧⲏⲉ𝛓ⲓ𝛓"""
+# attack attribute var assignment
+attack_1_attr = ("Attack+1", 1) 
 attack_1_attr_name, attack_1_attr_int = attack_1_attr
 
 attack_2_attr = ("Attack+2", 2)
@@ -104,8 +104,7 @@ attack_3_attr = ("Attack+3", 3)
 attack_3_attr_name, attack_3_attr_int = attack_3_attr
 
 
-
-# endurance attributes
+# endurance attribute var assignment
 endurance_1_attr = ("Endurance+1", 1)
 endurance_1_attr_name, endurance_1_attr_int = endurance_1_attr
 
@@ -115,7 +114,8 @@ endurance_2_attr_name, endurance_2_attr_int = endurance_2_attr
 endurance_3_attr = ("Endurance+3", 3)
 endurance_3_attr_name, endurance_3_attr_int = endurance_3_attr
 
-# speed attributes
+
+# speed attribute var assignment
 speed_1_attr = ("Speed+1", 1)
 speed_1_attr_name, speed_1_attr_int = speed_1_attr
 
@@ -125,12 +125,103 @@ speed_2_attr_name, speed_2_attr_int = speed_2_attr
 speed_3_attr = ("Speed+3", 3)
 speed_3_attr_name, speed_3_attr_int = speed_3_attr
 
+
+# magical power attribute var assignment
+magical_power_1_attr = ("Magical_power+1", 1)
+magical_power_1_attr_name, magical_power_1_attr_int = magical_power_1_attr
+
+magical_power_2_attr = ("Magical_power+2", 2)
+magical_power_2_attr_name, magical_power_2_attr_int = magical_power_2_attr
+
+magical_power_3_attr = ("Magical_power+3", 3)
+magical_power_3_attr_name, magical_power_3_attr_int = magical_power_3_attr
+
+
+# fire attribute var assignment
+fire_attr = ("Fire+3", 3)
+fire_attr_name, fire_attr_int = fire_attr
+
+# ice attribute var assignment
+ice_attr = ("Ice+3", 3)
+ice_attr_name, ice_attr_int = ice_attr
+
+# thunder attribute var assignment
+thunder_attr = ("Thunder+3", 3)
+thunder_attr_name, thunder_attr_int = thunder_attr
+
+# wind attribute var assignment
+wind_attr = ("Wind+3", 3)
+wind_attr_name, wind_attr_int = wind_attr
+
+# holy attribute var assignment
+holy_attr = ("Holy+3", 3)
+holy_attr_name, holy_attr_int = holy_attr
+
+# Dragon Slayer attribute var assignment
+dragon_slayer_attr = ("Dragon_slayer+3", 3)
+dragon_slayer_attr_name, dragon_slayer_attr_int = dragon_slayer_attr
+
+# Undead Buster attribute var assignment
+undead_buster_attr = ("Undead_buster+3", 3)
+undead_buster_attr_name, undead_buster_attr_int = undead_buster_attr
+
+# Sea Killer attribute var assignment
+sea_killer_attr = ("Sea_killer+3", 3)
+sea_killer_attr_name, sea_killer_attr_int = sea_killer_attr
+
+# stone breaker attribute var assignment
+stone_breaker_attr = ("Stone_breaker+3", 3)
+stone_breaker_attr_name, stone_breaker_attr_int = stone_breaker_attr
+
+# Plant Buster attribute var assignment
+plant_buster_attr = ("Plant_buster+3", 3)
+plant_buster_attr_name, plant_buster_attr_int = plant_buster_attr
+
+# Beast Hunter attribute var assignment
+beast_hunter_attr = ("Beast_hunter+3", 3)
+beast_hunter_attr_name, beast_hunter_attr_int = beast_hunter_attr
+
+# Sky Hunter attribute var assignment
+sky_hunter_attr = ("Sky_hunter+3", 3)
+sky_hunter_attr_name, sky_hunter_attr_int = sky_hunter_attr
+
+# Metal Breaker attribute var assignment
+metal_breaker_attr = ("Metal_breaker+3", 3)
+metal_breaker_attr_name, metal_breaker_attr_int = metal_breaker_attr
+
+# Mimic Breaker attribute var assignment
+mimic_breaker_attr = ("Mimic_breaker+3", 3)
+mimic_breaker_attr_name, mimic_breaker_attr_int = mimic_breaker_attr
+
+# mage slayer attribute var assignment
+mage_slayer_attr = ("Mage_slayer+3", 3)
+mage_slayer_attr_name, mage_slayer_attr_int = mage_slayer_attr
+
 # final attributes
 attack_attribute = (attack_1_attr, attack_2_attr, attack_3_attr)
 endurance_attribute = (endurance_1_attr, endurance_2_attr, endurance_3_attr)
 speed_attribute = (speed_1_attr, speed_2_attr, speed_3_attr)
+magical_power_attribute = (magical_power_1_attr, magical_power_2_attr, magical_power_3_attr)
+
+fire_attribute = (fire_attr,)
+ice_attribute = (ice_attr,)
+thunder_attribute = (thunder_attr,)
+wind_attribute = (wind_attr,)
+holy_attribute = (holy_attr,)
+dragon_slayer_attribute = (dragon_slayer_attr,)
+undead_buster_attribute = (undead_buster_attr,)
+sea_killer_attribute = (sea_killer_attr,)
+stone_breaker_attribute = (stone_breaker_attr,)
+plant_buster_attribute = (plant_buster_attr,)
+beast_hunter_attribute = (beast_hunter_attr,)
+sky_hunter_attribute = (sky_hunter_attr,)
+metal_breaker_attribute = (metal_breaker_attr,)
+mimic_breaker_attribute = (mimic_breaker_attr,)
+mage_slayer_attribute = (mage_slayer_attr,)
 
 
+
+"""🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 """
 # lists, tuples, dicts
 # item attributes
 attack_attribute = (attack_1_attr, attack_2_attr, attack_3_attr)
@@ -227,10 +318,10 @@ buy_price= None,
 sell_price= 150, 
 item_type= CATEGORY_TYPE[1]) 
 
-# attachments
-attack_attr = Items(
+# attribute attachments
+attack_attr_1 = Items(
 # data
-name=attack_attribute[0], 
+name=attack_attribute[0:0], 
 inventory_description="Increases weapon attack power.",
 #hp_restore= None,
 #whp_restore= None ,
@@ -238,11 +329,35 @@ buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
 #dps= None,
-#attribute_buff= N0ne,
+attribute_buff= attack_1_attr_int,
 shop= SHOPS[0:])
-endurance_attr = Items(
+attack_attr_2 = Items(
 # data
-name=endurance_attribute[0], 
+name=attack_attribute[1:0], 
+inventory_description="Increases weapon attack power.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= attack_2_attr_int,
+shop= SHOPS[0:])
+attack_attr_3 = Items(
+# data
+name=attack_attribute[2:0], 
+inventory_description="Increases weapon attack power.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= attack_3_attr_int,
+shop= SHOPS[0:])
+endurance_attr_1 = Items(
+# data
+name=endurance_attribute[0:0], 
 inventory_description="Increases weapon attack power.",
 #hp_restore= None,
 #whp_restore= None ,
@@ -250,8 +365,286 @@ buy_price= 260,
 sell_price= 130,
 item_type= CATEGORY_TYPE[4],
 #dps= None,
-#attribute_buff= None,
+attribute_buff= endurance_1_attr_int,
 shop= SHOPS[0:])
+endurance_attr_2 = Items(
+# data
+name=endurance_attribute[1:0], 
+inventory_description="Increases weapon attack power.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 260,
+sell_price= 130,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= endurance_2_attr_int,
+shop= SHOPS[0:])
+endurance_attr_3 = Items(
+# data
+name=endurance_attribute[2:0], 
+inventory_description="Increases weapon attack power.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 260,
+sell_price= 130,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= endurance_3_attr_int,
+shop= SHOPS[0:])
+speed_attr_1 = Items(
+# data
+name=speed_attribute[0:0], 
+inventory_description="Weapons' speed bar fill up faster.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 260,
+sell_price= 130,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+#attribute_buff= None,
+shop= SHOPS[1:])
+speed_attr_2 = Items(
+# data
+name=speed_attribute[1:0], 
+inventory_description="Weapons' speed bar fill up faster.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 260,
+sell_price= 130,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= speed_2_attr_int,
+shop= SHOPS[1:])
+speed_attr_3 = Items(
+# data
+name=speed_attribute[2:0], 
+inventory_description="Weapons' speed bar fill up faster.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 260,
+sell_price= 130,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= speed_3_attr_int,
+shop= SHOPS[1:])
+magical_power_attr_1 = Items(
+# data
+name=magical_power_attribute[0:0], 
+inventory_description="Increases effect of attributes.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 260,
+sell_price= 130,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= magical_power_1_attr_int,
+shop= SHOPS[1:])
+magical_power_attr_2 = Items(
+# data
+name=magical_power_attribute[1:0], 
+inventory_description="Increases effect of attributes.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 260,
+sell_price= 130,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= magical_power_2_attr_int,
+shop= SHOPS[1:])
+magical_power_attr_3 = Items(
+# data
+name=magical_power_attribute[2:0], 
+inventory_description="Increases effect of attributes.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 260,
+sell_price= 130,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= magical_power_3_attr_int,
+shop= SHOPS[1:])
+fire_attr = Items(
+# data
+name=fire_attribute[0], 
+inventory_description="Gives weapons the fire attribute.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= fire_attr_int,
+shop= SHOPS[1:])
+ice_attr = Items(
+# data
+name=ice_attribute[0], 
+inventory_description="	Gives weapons the ice attribute.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= ice_attr_int,
+shop= SHOPS[1:])
+thunder_attr = Items(
+# data
+name=thunder_attribute[0], 
+inventory_description="	Gives weapons the thunder attribute.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= thunder_attr_int,
+shop= SHOPS[1:])
+wind_attr = Items(
+# data
+name=wind_attribute[0], 
+inventory_description="	Gives weapons the wind attribute.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= wind_attr_int,
+shop= SHOPS[1:])
+holy_attr = Items(
+# data
+name=holy_attribute[0], 
+inventory_description="	Gives weapons the holy attribute.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= holy_attr_int,
+shop= SHOPS[1:])
+dragon_slayer_attr = Items(
+# data
+name=dragon_slayer_attribute[0], 
+inventory_description="	Gives weapons the holy attribute.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= dragon_slayer_attr_int,
+shop= SHOPS[1:])
+undead_buster_attr = Items(
+# data
+name=undead_buster_attribute[0], 
+inventory_description="	Gives weapons the holy attribute.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= undead_buster_attr_int,
+shop= SHOPS[1:])
+sea_killer_attr = Items(
+# data
+name=sea_killer_attribute[0], 
+inventory_description="	Gives weapons the holy attribute.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= sea_killer_attr_int,
+shop= SHOPS[1:])
+stone_breaker_attr = Items(
+# data
+name=stone_breaker_attribute[0], 
+inventory_description="	Gives weapons the holy attribute.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= stone_breaker_attr_int,
+shop= SHOPS[1:])
+plant_buster_attr = Items(
+# data
+name=plant_buster_attribute[0], 
+inventory_description="	Gives weapons the holy attribute.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= plant_buster_attr_int,
+shop= SHOPS[1:])
+beast_hunter_attr = Items(
+# data
+name=beast_hunter_attribute[0], 
+inventory_description="	Gives weapons the holy attribute.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= beast_hunter_attr_int,
+shop= SHOPS[1:])
+sky_hunter_attr = Items(
+# data
+name=sky_hunter_attribute[0], 
+inventory_description="	Gives weapons the holy attribute.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= sky_hunter_attr_int,
+shop= SHOPS[1:])
+metal_breaker_attr = Items(
+# data
+name=metal_breaker_attribute[0], 
+inventory_description="	Gives weapons the holy attribute.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= metal_breaker_attr_int,
+shop= SHOPS[1:])
+mimic_breaker_attr = Items(
+# data
+name=mimic_breaker_attribute[0], 
+inventory_description="	Gives weapons the holy attribute.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= mimic_breaker_attr_int,
+shop= SHOPS[1:])
+mage_slayer_attr = Items(
+# data
+name=mage_slayer_attribute[0], 
+inventory_description="	Gives weapons the holy attribute.",
+#hp_restore= None,
+#whp_restore= None ,
+buy_price= 300,
+sell_price= 150,
+item_type= CATEGORY_TYPE[4],
+#dps= None,
+attribute_buff= mage_slayer_attr_int,
+shop= SHOPS[1:])
+
+
 
 # item list, tuples, dictionaries
 POWDERS = ( # powder items
@@ -304,7 +697,7 @@ RECOVERY_ITEMS = ( # recovery items
     MIGHTY_HEALING,)
 
 """ <- darkcloud recovery item documentaion
-
+𝐝𝐚𝐫𝐤 𝐜𝐥𝐨𝐮𝐝
 █▀█ █▀▀ █▀▀ █▀█ █░█ █▀▀ █▀█ █▄█   █ ▀█▀ █▀▀ █▀▄▀█ █▀
 █▀▄ ██▄ █▄▄ █▄█ ▀▄▀ ██▄ █▀▄ ░█░   █ ░█░ ██▄ █░▀░█ ▄█
 
@@ -322,7 +715,30 @@ It is also possible to place any recovery item in an active item slot, which wil
 can be typically found inside shops, treasure chests, miracle chests, by stealing from monsters, or slaying those that drop any.p
 """
 
-
+ATTRIBUTES = ( # attribute items
+    # attack attributes
+    attack_attr_1,
+    attack_attr_2,
+    attack_attr_3,
+    
+    # endurance attributes
+    endurance_attr_1,
+    endurance_attr_2,
+    endurance_attr_3,
+    
+    # speed attributes
+    speed_attr_1,
+    speed_attr_2,
+    speed_attr_3,
+    
+    # magical power attributes
+    magical_power_attr_1,
+    magical_power_attr_2,
+    magical_power_attr_3,
+    
+    # fire attributes
+    fire_attr,
+    )
 
 
 
