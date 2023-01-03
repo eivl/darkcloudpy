@@ -264,10 +264,22 @@ class Items:
     dps: int = field(default_factory=0) # damage points
     attribute_buff: int = field(default_factory=None) # damage points
     shop: str = field(default_factory=None, repr=True) # itemm shop location
+    
+    # item globals
+    global CAVE_KEY
+    global HORNED_KEY
+    global TREASURE_CHEST_KEY
+    
+    #  item constants 
+    CAVE_KEY = "Cave Key"
+    HORNED_KEY = "Horned Key"
+    TREASURE_CHEST_KEY = "Treasure Chest Key"
+    
+    # methods
     pass
 
 # object instances
-#powders
+# powder class constructors
 REPAIR_POWDER = Items("Repair Powder","Recovers WHP of weapons.", 20, 10, CATEGORY_TYPE[0])
 AUTO_REPAIR_POWDER = Items("Set as an active item. Auto-repairs weapons about to break..", 200, 100, CATEGORY_TYPE[0])
 ESCAPE_POWDER = Items("Escape Powder","Having this allows an escape from dungeon with command.", 20, 10, CATEGORY_TYPE[0])
@@ -275,7 +287,7 @@ POWERUP_POWDER = Items("Powerup Powder","Unconditionally power up weapon's grade
 STAND_IN_POWDER = Items("Stand-in Powder","Can change to ally when current character's exhausted.", 50, 25, CATEGORY_TYPE[0])
 REVIVAL_POWDER = Items("Revival Powder","Revive from dying conditions.", 100, 50, CATEGORY_TYPE[0])
 
-# recovery 
+# recovery item class constructors 
 BREAD = Items("Bread", "Eating it recovers health a little bit.", 50, None, None, 10, CATEGORY_TYPE[1])
 CHEESE = Items("Cheese", "Eating it allows fairly good recovery of health.", 80, None, None, 30, CATEGORY_TYPE[1])
 MELLOW_BANANA = Items("Mellow Banana", "It recovers HP but make you feel thirsty.", 170, None, None, 45, CATEGORY_TYPE[1])
@@ -318,8 +330,8 @@ buy_price= None,
 sell_price= 150, 
 item_type= CATEGORY_TYPE[1]) 
 
-# attribute attachments
-attack_attr_1 = Items(
+# attribute attachments class objects/constructors
+ATTACK_ATTR_1_OBJ = Items(
 # data
 name=attack_attribute[0:0], 
 inventory_description="Increases weapon attack power.",
@@ -331,7 +343,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= attack_1_attr_int,
 shop= SHOPS[0:])
-attack_attr_2 = Items(
+ATTACK_ATTR_2_OBJ = Items(
 # data
 name=attack_attribute[1:0], 
 inventory_description="Increases weapon attack power.",
@@ -343,7 +355,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= attack_2_attr_int,
 shop= SHOPS[0:])
-attack_attr_3 = Items(
+ATTACK_ATTR_3_OBJ = Items(
 # data
 name=attack_attribute[2:0], 
 inventory_description="Increases weapon attack power.",
@@ -355,7 +367,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= attack_3_attr_int,
 shop= SHOPS[0:])
-endurance_attr_1 = Items(
+ENDURANCE_ATTR_1_OBJ = Items(
 # data
 name=endurance_attribute[0:0], 
 inventory_description="Increases weapon attack power.",
@@ -367,7 +379,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= endurance_1_attr_int,
 shop= SHOPS[0:])
-endurance_attr_2 = Items(
+ENDURANCE_ATTR_2_OBJ = Items(
 # data
 name=endurance_attribute[1:0], 
 inventory_description="Increases weapon attack power.",
@@ -379,7 +391,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= endurance_2_attr_int,
 shop= SHOPS[0:])
-endurance_attr_3 = Items(
+ENDURANCE_ATTR_3_OBJ = Items(
 # data
 name=endurance_attribute[2:0], 
 inventory_description="Increases weapon attack power.",
@@ -391,7 +403,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= endurance_3_attr_int,
 shop= SHOPS[0:])
-speed_attr_1 = Items(
+SPEED_ATTR_1_OBJ = Items(
 # data
 name=speed_attribute[0:0], 
 inventory_description="Weapons' speed bar fill up faster.",
@@ -403,7 +415,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 #attribute_buff= None,
 shop= SHOPS[1:])
-speed_attr_2 = Items(
+SPEED_ATTR_2_OBJ = Items(
 # data
 name=speed_attribute[1:0], 
 inventory_description="Weapons' speed bar fill up faster.",
@@ -415,7 +427,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= speed_2_attr_int,
 shop= SHOPS[1:])
-speed_attr_3 = Items(
+SPEED_ATTR_3_OBJ = Items(
 # data
 name=speed_attribute[2:0], 
 inventory_description="Weapons' speed bar fill up faster.",
@@ -427,7 +439,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= speed_3_attr_int,
 shop= SHOPS[1:])
-magical_power_attr_1 = Items(
+MAGICAL_POWER_ATTR_1_OBJ = Items(
 # data
 name=magical_power_attribute[0:0], 
 inventory_description="Increases effect of attributes.",
@@ -439,7 +451,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= magical_power_1_attr_int,
 shop= SHOPS[1:])
-magical_power_attr_2 = Items(
+MAGICAL_POWER_ATTR_2_OBJ = Items(
 # data
 name=magical_power_attribute[1:0], 
 inventory_description="Increases effect of attributes.",
@@ -451,7 +463,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= magical_power_2_attr_int,
 shop= SHOPS[1:])
-magical_power_attr_3 = Items(
+MAGICAL_POWER_ATTR_3_OBJ = Items(
 # data
 name=magical_power_attribute[2:0], 
 inventory_description="Increases effect of attributes.",
@@ -463,7 +475,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= magical_power_3_attr_int,
 shop= SHOPS[1:])
-fire_attr = Items(
+FIRE_ATTR_OBJ = Items(
 # data
 name=fire_attribute[0], 
 inventory_description="Gives weapons the fire attribute.",
@@ -475,7 +487,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= fire_attr_int,
 shop= SHOPS[1:])
-ice_attr = Items(
+ICE_ATTR_OBJ = Items(
 # data
 name=ice_attribute[0], 
 inventory_description="	Gives weapons the ice attribute.",
@@ -487,7 +499,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= ice_attr_int,
 shop= SHOPS[1:])
-thunder_attr = Items(
+THUNDER_ATTR_OBJ = Items(
 # data
 name=thunder_attribute[0], 
 inventory_description="	Gives weapons the thunder attribute.",
@@ -499,7 +511,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= thunder_attr_int,
 shop= SHOPS[1:])
-wind_attr = Items(
+WIND_ATTR_OBJ = Items(
 # data
 name=wind_attribute[0], 
 inventory_description="	Gives weapons the wind attribute.",
@@ -511,7 +523,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= wind_attr_int,
 shop= SHOPS[1:])
-holy_attr = Items(
+HOLY_ATTR_OBJ = Items(
 # data
 name=holy_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
@@ -523,7 +535,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= holy_attr_int,
 shop= SHOPS[1:])
-dragon_slayer_attr = Items(
+DRAGON_SLAYER_ATTR_OBJ = Items(
 # data
 name=dragon_slayer_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
@@ -535,7 +547,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= dragon_slayer_attr_int,
 shop= SHOPS[1:])
-undead_buster_attr = Items(
+UNDEAD_BUSTER_ATTR_OBJ = Items(
 # data
 name=undead_buster_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
@@ -547,7 +559,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= undead_buster_attr_int,
 shop= SHOPS[1:])
-sea_killer_attr = Items(
+SEA_KILLER_ATTR_OBJ = Items(
 # data
 name=sea_killer_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
@@ -559,7 +571,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= sea_killer_attr_int,
 shop= SHOPS[1:])
-stone_breaker_attr = Items(
+STONE_BREAKER_ATTR_OBJ = Items(
 # data
 name=stone_breaker_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
@@ -571,7 +583,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= stone_breaker_attr_int,
 shop= SHOPS[1:])
-plant_buster_attr = Items(
+PLANT_BUSTER_ATTR_OBJ = Items(
 # data
 name=plant_buster_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
@@ -583,7 +595,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= plant_buster_attr_int,
 shop= SHOPS[1:])
-beast_hunter_attr = Items(
+BEAST_HUNTER_ATTR_OBJ = Items(
 # data
 name=beast_hunter_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
@@ -595,7 +607,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= beast_hunter_attr_int,
 shop= SHOPS[1:])
-sky_hunter_attr = Items(
+SKY_HUNTER_ATTR_OBJ = Items(
 # data
 name=sky_hunter_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
@@ -607,7 +619,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= sky_hunter_attr_int,
 shop= SHOPS[1:])
-metal_breaker_attr = Items(
+METAL_BREAKER_ATTR_OBJ = Items(
 # data
 name=metal_breaker_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
@@ -619,7 +631,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= metal_breaker_attr_int,
 shop= SHOPS[1:])
-mimic_breaker_attr = Items(
+MIMIC_BREAKER_ATTR_OBJ = Items(
 # data
 name=mimic_breaker_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
@@ -631,7 +643,7 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= mimic_breaker_attr_int,
 shop= SHOPS[1:])
-mage_slayer_attr = Items(
+MAGE_SLAYER_ATTR_OBJ = Items(
 # data
 name=mage_slayer_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
@@ -643,6 +655,30 @@ item_type= CATEGORY_TYPE[4],
 #dps= None,
 attribute_buff= mage_slayer_attr_int,
 shop= SHOPS[1:])
+
+# Miscellaneous item class constructors
+CAVE_KEY =Items(
+    name=CAVE_KEY, 
+    inventory_description="Received from the Mayor at the start of the game to enter the Divine Beast Cave.")
+HORNED_KEY_OBJ = Items(
+    name=HORNED_KEY, 
+    inventory_description="Received after the completion of Dran's windmill. Used to enter the boss room at the end of the Divine Beast Cave.")
+TREASURE_CHEST_KEY_OBJ = Items(
+    name=TREASURE_CHEST_KEY,
+    inventory_description="Used to unlock locked treasure chests, also bypasses traps.")
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -717,28 +753,41 @@ can be typically found inside shops, treasure chests, miracle chests, by stealin
 
 ATTRIBUTES = ( # attribute items
     # attack attributes
-    attack_attr_1,
-    attack_attr_2,
-    attack_attr_3,
+    ATTACK_ATTR_1_OBJ,
+    ATTACK_ATTR_2_OBJ,
+    ATTACK_ATTR_3_OBJ,
     
     # endurance attributes
-    endurance_attr_1,
-    endurance_attr_2,
-    endurance_attr_3,
+    ENDURANCE_ATTR_1_OBJ,
+    ENDURANCE_ATTR_2_OBJ,
+    ENDURANCE_ATTR_3_OBJ,
     
     # speed attributes
-    speed_attr_1,
-    speed_attr_2,
-    speed_attr_3,
+    SPEED_ATTR_1_OBJ,
+    SPEED_ATTR_2_OBJ,
+    SPEED_ATTR_3_OBJ,
     
     # magical power attributes
-    magical_power_attr_1,
-    magical_power_attr_2,
-    magical_power_attr_3,
+    MAGICAL_POWER_ATTR_1_OBJ,
+    MAGICAL_POWER_ATTR_2_OBJ,
+    MAGICAL_POWER_ATTR_3_OBJ,
     
-    # fire attributes
-    fire_attr,
-    )
+    # attributes
+    FIRE_ATTR_OBJ,
+    ICE_ATTR_OBJ,
+    THUNDER_ATTR_OBJ,
+    WIND_ATTR_OBJ,
+    HOLY_ATTR_OBJ,
+    DRAGON_SLAYER_ATTR_OBJ,
+    UNDEAD_BUSTER_ATTR_OBJ,
+    SEA_KILLER_ATTR_OBJ,
+    STONE_BREAKER_ATTR_OBJ,
+    PLANT_BUSTER_ATTR_OBJ,
+    BEAST_HUNTER_ATTR_OBJ,
+    SKY_HUNTER_ATTR_OBJ,
+    METAL_BREAKER_ATTR_OBJ,
+    MIMIC_BREAKER_ATTR_OBJ,
+    MAGE_SLAYER_ATTR_OBJ)
 
 
 

@@ -1,8 +1,3 @@
-# importing modules
-from dataclasses import dataclass, field
-import logging, logging.handlers
-from logging.handlers import SMTPHandler
-
 """ GenesisGirs typical logger preset
 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ
 
@@ -41,6 +36,7 @@ loggers as much as you can from my pack and see if you can create your very own 
 
 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ〤ㄖ〤ㄖ〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ
 """
+
 def logger(): # GenesisGir's typical logger preset! 🪵
     
     # importing modules
@@ -55,7 +51,7 @@ def logger(): # GenesisGir's typical logger preset! 🪵
     
     # File Handlers
     file_handler = logging.FileHandler( 
-    filename = r"GenesisGirLessonsVOL.4\Lessons\DarkCloud\Log\DarkCloud.log",
+    filename = r"",
     mode = 'w', # filemode 
     encoding = 'utf-8', # set encoding format
     delay = False, 
@@ -86,123 +82,64 @@ def logger(): # GenesisGir's typical logger preset! 🪵
 # logger variable
 logger = logger()
 
-# dataclasses
+# import modules
+from dataclasses import dataclass, field
+from ModulePackages.LOCATIONS.dark_cloud_locations import *
+from ModulePackages.PLAYER.Player import *
+from ModulePackages.ITEMS.items import *
+
+# data classes
 @dataclass
-class Player(): # player attributes/elements
+class Npc:
     
-    # docstring
-    """The PlayerTraits class is responsible for keeping the user's username, attributes, Level, Experience points and much more like ablities
-    """
-    # global player trait variables
-    global player_nickname
-    global player_health
-    global player_hunger
-    global player_thirst
-    global player_level
-    global player_exp
+    # npc name globals
+    global MOTHER
+    global ODD_GAFFER
+    global PIKE
+    global PAIGE
+    global MAYOR
     
-    # global player trait status variables
-    global player_status
-    
-    # player variables
-    player_nickname = None # user in-game nickname
-    
-    # player constants
-    default_nickname = "Toan"
-    full_health = 100
-    full_hunger = 100
-    quenched_thirst = 100
-    default_level = 1
-    default_xp = 0
-    default_status = None
-    
-    # player status variables
-    poison_condition = False
-    gooey_condition = False
-    curse_condition = False
-    pumped_up_condition = False
-    stop_condition = False
-    
-    # lists, tuples, dicts
-    player_condition = [poison_condition , gooey_condition , curse_condition , pumped_up_condition, stop_condition ]
-    
-    # player fields/attributes
-    player_name: str = field(default_factory=default_nickname) # default name set to 'Toan'
-    player_health: int  = field(default_factory=full_health) # default player healh set to 100
-    player_hunger: int  = field(default_factory=full_hunger) # default player hunger set to 100
-    player_thirst: int  = field(default_factory=quenched_thirst) # default player thirst set to 100
-    player_level: int  = field(default_factory=default_level) # default player level set to 1
-    player_exp: int  = field(default_factory=default_xp) # default xp set to 0 xp
-    
-    # player status field
-    player_status: str  = field(default_factory=default_status)# default status is None
+    # npc key item globals
+    global MAYOR_ITEMS
+    global MOTHER_ITEMS
     
     
-    logging.info("player fields/attributes created")
+    # npc constants
+    MOTHER = "Mother"
+    ODD_GAFFER = "Odd Gaffer"
+    MAYOR = "Mayor"
+    PIKE = "Pike"
+    PAIGE = "Paige"
     
-    # class methods
-    def __player_name__(self): 
-        
-        return player_nickname
-    def __player_health__(self): 
-        
-        return player_health
-    def __player_status__(self): 
-        
-        return player_status
-    def __player_hunger__(self): 
-        
-        return player_hunger
-    def __player_thirst__(self): 
-        
-        return player_thirst
-    def __player_level__(self): 
-        
-        return player_level
-    def __player_experience__(self): 
-        
-        return player_exp
+    # NPC key item lists
+    MOTHER_ITEMS = [] # cave key must be created
+    MAYOR_ITEMS = [CAVE_KEY.name, BREAD.name, TASTY_WATER.name, REPAIR_POWDER.name, ESCAPE_POWDER.name, ANTIDOTE_DRINK.name]
     
-    
-    # < - will think of some behaviors in the future
+    # fields/attrs
+    name: str
+    location: str = field(default_factory=None)
+    family: list = field(default_factory=None)
+    key_items: tuple = field(default_factory=None)
     pass
 
-
-# variables
-NICKNAME = Player.__player_name__()
-health = Player.__player_health__()
-hunger = Player.__player_hunger__()
-thirst = Player.__player_thirst__()
-level = Player.__player_level__()
-experience = Player.__player_experience__()
-
-# object instances
-player = Player(NICKNAME, health, hunger, thirst, level, experience)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# object constructors
+MOTHER_NPC = Npc(# players mother
+    name=MOTHER, 
+    location=NORUNE_VILLAGE, 
+    family=[player_nickname], 
+    key_items=MOTHER_ITEMS)
+ODD_GAFFER_NPC = Npc( # a odd gaffer that sells items to player within Norune village
+    name=ODD_GAFFER,
+    location=NORUNE_VILLAGE)
+MAYOR_NPC = Npc( # the mayor of Norune village
+    name=MAYOR,
+    location=NORUNE_VILLAGE, 
+    key_items=MAYOR_ITEMS,)
+PIKE_NPC = Npc(
+    name=PIKE, 
+    location=NORUNE_VILLAGE, 
+    family=[PAIGE])
+PAIGE_NPC = Npc(
+    name=PAIGE, 
+    location=NORUNE_VILLAGE, 
+    family=[PIKE])
