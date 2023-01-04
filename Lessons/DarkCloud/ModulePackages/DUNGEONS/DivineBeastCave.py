@@ -27,7 +27,7 @@ class Divine_Beast_Cave():
     current_floor: int
     name: str = "Divine Beast Cave"
     location: str = "Norune Village"
-    total_floors: int = 15
+    total_floors: int = 8
     resident: str = "Dran"
     boss: str = MASTER_JACKET
     poi:str or int = ("B4", "B8")
