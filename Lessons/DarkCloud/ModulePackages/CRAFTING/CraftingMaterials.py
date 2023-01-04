@@ -19,7 +19,7 @@ This module contains all the classes, functions, variables and constants for the
 # import modules
 from dataclasses import dataclass
 
-# Spectrum variable types
+# Spectrum constant types
 CYCLONE = "Cyclone"
 EXORCISM = "Exorcism"
 CHILL = "Chill"
@@ -44,7 +44,7 @@ SPECTRUM[4] = Flame
 SPECTRUM = (CYCLONE, EXORCISM, CHILL, LIGHTNING, FLAME, SMASH, DURABLE, BEAST)
 # dataclass
 @dataclass
-class Crafting_Materials():
+class Crafting_Materials:
     
     # fields
     name: str
@@ -69,8 +69,6 @@ class Crafting_Materials():
     def __sound_filepath__(self): 
         
         return Crafting_Materials.sound_filepath
-    
-    
     pass
 
 # object instances/constructors
@@ -96,19 +94,3 @@ GLASS_MATERIAL = Crafting_Materials("Glass Material", "Ingredient for glass.", 2
 
 # flame Spectrum
 GUNPOWDER = Crafting_Materials("Gunpowder", "Dangerous stuff if you're not careful.", 2, SPECTRUM[4])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

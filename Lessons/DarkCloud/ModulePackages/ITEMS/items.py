@@ -91,6 +91,11 @@ from ModulePackages.PLAYER.Player import *
 from ModulePackages.LOCATIONS.dark_cloud_locations import *
 
 """🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 """
+# multiple assignment power up item staging
+gourd_effect_name = "Thirst+"
+gourd_effect_int = 1
+gourd_effect = (gourd_effect_name, gourd_effect_int)
+
 # multiple assignment attribute staging
 """ⲁⲧⲧꞅⲓⲃ𐌵ⲧⲉ 𝛓ⲩⲛⲧⲏⲉ𝛓ⲓ𝛓"""
 # attack attribute var assignment
@@ -255,9 +260,10 @@ class Items:
     
     # fields/attributes
     name: str = field(repr=True) # item name
-    inventory_description: str = field(default_factory= None,repr=True)
+    inventory_description: str = field(default_factory= None,repr=True) # describes item
     hp_restore: int or bool = field(default_factory= None,repr=True) # health restore points
     whp_restore: int = field(default_factory= None,repr=True) # weapon restore points
+    effect: str or int = field(default_factory= None,repr=True) # weapon restore points
     buy_price: int or float = field(default_factory= None,repr=True)
     sell_price: int or float = field(default_factory= None,repr=True)
     item_type: str = field(default_factory= None,repr=True)
@@ -286,6 +292,15 @@ ESCAPE_POWDER = Items("Escape Powder","Having this allows an escape from dungeon
 POWERUP_POWDER = Items("Powerup Powder","Unconditionally power up weapon's grade.", None, 10, CATEGORY_TYPE[0])
 STAND_IN_POWDER = Items("Stand-in Powder","Can change to ally when current character's exhausted.", 50, 25, CATEGORY_TYPE[0])
 REVIVAL_POWDER = Items("Revival Powder","Revive from dying conditions.", 100, 50, CATEGORY_TYPE[0])
+#Key itsms
+
+
+# powerup item class constructors 
+GOURD = Items(name="Gourd", inventory_description="Increases max value of thirst meter.", effect= gourd_effect)
+FRUIT_OF_EDEN = Items(name="Fruit Of Eden", inventory_description="Incredibly Delicious Fruit. Increases max health value.")
+CHANGING_POTION = Items(name="Changing Potion", inventory_description="Magical potion that changes animal to human")
+#throwable object item instances
+BOMB = Item(name="Bomb", inventory_description="Throwing it at an enemy makes it explode, causing major damage")
 
 # recovery item class constructors 
 BREAD = Items("Bread", "Eating it recovers health a little bit.", 50, None, None, 10, CATEGORY_TYPE[1])
