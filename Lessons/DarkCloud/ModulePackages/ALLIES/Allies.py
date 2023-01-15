@@ -1,7 +1,6 @@
 # importing modules
 from dataclasses import dataclass, field
 import logging, logging.handlers
-from logging.handlers import SMTPHandler
 
 """ GenesisGirs typical logger preset
 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ
@@ -94,7 +93,7 @@ class Allies(): # player attributes/elements
     """The Allies class is responsible for keeping the allies's usernames, attributes, Levels, Experience points and much more like ablities.
     """
     # global ally traits variables
-    global ally_name
+    global ally_name 
     global ally_health
     global ally_hunger
     global ally_thirst
@@ -107,11 +106,11 @@ class Allies(): # player attributes/elements
     
     # ally fields/attributes
     ally_name = str # ally name identifier
-    ally_health: int = field(default_factory=100) # default player healh set to 100
-    ally_hunger: int = field(default_factory=100) # default player hunger set to 100
-    ally_thirst: int = field(default_factory=0) # default player thirst set to 100
-    ally_level: int = field(default_factory=1) # default player level set to 1
-    ally_xp: int = field(default_factory=0) # default xp set to 0 xp
+    ally_health: int = field(default_factory=100) # default ally healh set to 100
+    ally_hunger: int = field(default_factory=100) # default ally hunger set to 100
+    ally_thirst: int = field(default_factory=0) # default ally thirst set to 100
+    ally_level: int = field(default_factory=1) # default ally level set to 1
+    ally_xp: int = field(default_factory=0) # default ally xp set to 0 xp
     
     # ally well being status's
     ally_hunger_active_status: bool = field(default_factory=True)

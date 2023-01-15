@@ -86,7 +86,7 @@ def logger(): # GenesisGir's typical logger preset! 🪵
     
     return logger
     pass
-    
+
 # logger variable
 logger = logger()
 
@@ -118,7 +118,6 @@ class Atlas:
     unlocked_status: bool = field(default_factory=False, repr=True)
     
     # class methods
-    
     pass
 
 # object instance/constructors
@@ -160,19 +159,3 @@ TREES = Atlas(name="Trees", description="Nest for birds.", location=DIVINE_BEAST
 ROAD = Atlas(name="Road", description="Interconnects town's people and homes.", location=DIVINE_BEAST_CAVE, unlocked_status=False)
 RIVER = Atlas(name="road", description="Stream of water across the land.", location=DIVINE_BEAST_CAVE, unlocked_status=False)
 BARBELL = Atlas(name="Barbell", description="Exercising tool", location=DIVINE_BEAST_CAVE, unlocked_status=False)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
