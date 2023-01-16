@@ -1,6 +1,6 @@
 # import modules
-import os, sys
 from ModulePackages.LOCATIONS.dark_cloud_locations import *
+from ModulePackages.ITEMS.items import *
 from dataclasses import dataclass, field
 
 """ GenesisGirs typical logger preset
@@ -105,9 +105,9 @@ class Boss:
     defend: bool = field(default=True)
     boss_abs: int = field(default=5)
     weakness: str = field(default=None)
-    item_steal: str = field(default=None) # this boss steals repair powder replace None with it when item created
+    item_steal: str or bool = field(default=REPAIR_POWDER) # this boss steals repair powder replace None with it when item created
     pass
 
 # dueling bosses object instants/constructors
-MASTER_JACKET = Boss(name=MASTER_JACKET)
+MASTER_JACKET = Boss()
 

@@ -98,22 +98,30 @@ class Npc:
     global PIKE
     global PAIGE
     global MAYOR
+    global MACHO
+    global KOMACHO
+    global CLAUDE
     
     # npc key item globals
     global MAYOR_ITEMS
     global MOTHER_ITEMS
-    
+    global CLAUDE_KEY_ITEMS
     
     # npc constants
-    MOTHER = "Mother"
+    MOTHER = "Renee"
     ODD_GAFFER = "Odd Gaffer"
     MAYOR = "Mayor"
     PIKE = "Pike"
     PAIGE = "Paige"
+    MACHO = "Macho"
+    KOMACHO = "Komacho"
+    CLAUDE = "Claude"
+    
     
     # NPC key item lists
     MOTHER_ITEMS = [] # cave key must be created
     MAYOR_ITEMS = [CAVE_KEY.name, BREAD.name, TASTY_WATER.name, REPAIR_POWDER.name, ESCAPE_POWDER.name, ANTIDOTE_DRINK.name]
+    CLAUDE_KEY_ITEMS = [CHEESE.name, SOAP.name]
     
     # fields/attrs
     name: str
@@ -123,23 +131,30 @@ class Npc:
     pass
 
 # object constructors
-MOTHER_NPC = Npc(# players mother
-    name=MOTHER, 
+MOTHER_NPC = Npc(name=MOTHER, 
     location=NORUNE_VILLAGE, 
     family=[player_nickname], 
     key_items=MOTHER_ITEMS)
-ODD_GAFFER_NPC = Npc( # a odd gaffer that sells items to player within Norune village
-    name=ODD_GAFFER,
+ODD_GAFFER_NPC = Npc( name=ODD_GAFFER,
     location=NORUNE_VILLAGE)
-MAYOR_NPC = Npc( # the mayor of Norune village
-    name=MAYOR,
+MAYOR_NPC = Npc( name=MAYOR,
     location=NORUNE_VILLAGE, 
     key_items=MAYOR_ITEMS,)
-PIKE_NPC = Npc(
-    name=PIKE, 
+PIKE_NPC = Npc(name=PIKE, 
     location=NORUNE_VILLAGE, 
     family=[PAIGE])
-PAIGE_NPC = Npc(
-    name=PAIGE, 
+PAIGE_NPC = Npc(name=PAIGE, 
     location=NORUNE_VILLAGE, 
     family=[PIKE])
+MACHO = Npc(name= MACHO, 
+            location= NORUNE_VILLAGE, 
+            family=KOMACHO, 
+            key_items=None)
+KOMACHO = Npc(name= KOMACHO, 
+            location= NORUNE_VILLAGE, 
+            family=MACHO, 
+            key_items=None)
+CLAUDE = Npc(name=CLAUDE, 
+            location=NORUNE_VILLAGE,
+            family=None,
+            key_items=CLAUDE_KEY_ITEMS)

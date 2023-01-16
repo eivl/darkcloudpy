@@ -91,6 +91,7 @@ from ModulePackages.PLAYER.Player import *
 from ModulePackages.LOCATIONS.dark_cloud_locations import *
 
 """🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 🅶🅴🅽🅴🆂🅸🆂 """
+
 # multiple assignment power up item staging
 gourd_effect_name = "Thirst+"
 gourd_effect_int = 1
@@ -300,7 +301,7 @@ GOURD = Items(name="Gourd", inventory_description="Increases max value of thirst
 FRUIT_OF_EDEN = Items(name="Fruit Of Eden", inventory_description="Incredibly Delicious Fruit. Increases max health value.")
 CHANGING_POTION = Items(name="Changing Potion", inventory_description="Magical potion that changes animal to human")
 #throwable object item instances
-BOMB = Item(name="Bomb", inventory_description="Throwing it at an enemy makes it explode, causing major damage")
+BOMB = Items(name="Bomb", inventory_description="Throwing it at an enemy makes it explode, causing major damage")
 
 # recovery item class constructors 
 BREAD = Items("Bread", "Eating it recovers health a little bit.", 50, None, None, 10, CATEGORY_TYPE[1])
