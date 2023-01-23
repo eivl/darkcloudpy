@@ -1,6 +1,11 @@
 # importing modules
-from dataclasses import dataclass, field
-import logging, logging.handlers
+from dataclasses import dataclass, field # class modules
+import pygame
+from pygame import mixer, mixer_music # audio modules responsible ommitting playback of wav files
+import logging, logging.handlers # logger modules
+from ModulePackages.PLAYER.Player import * # sub package module imports
+
+# <- insert mmore modules here
 
 """ GenesisGirs typical logger preset
 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ
@@ -117,6 +122,7 @@ class Command_Menu:
         # import modules
         from dataclasses import dataclass, field
         import logging, logging.handlers
+        
         # command menu classes
         class Items_Menu:
             
@@ -182,13 +188,19 @@ class Command_Menu:
         from dataclasses import dataclass, field
         import logging, logging.handlers
         
+        
         # command menu classes
         def weapon_menu():
             
             # gloabls
-            
+            global selected_weapon
+            global selected_weapon_attribute
+            global equipped_weapon_attribute
             # variables
+            selected_weapon = None
+            selected_weapon_attribute = None
             
+            # <- insert more
             # constants
             
             # fields/attributes
@@ -200,6 +212,7 @@ class Command_Menu:
             # equipped weapon fields
             equipped_weapon: str = field(default_factory=None) # insert the 'dagger' as defualt factory
             equipped_weapon_description_gui: str
+            equipped_weapon_attribute: str = field(default_factory=None)
             equipped_weapon_attribute_attachment_gui: str = field(default_factory=None)
             equipped_weapon_attk_int: int or str = field(default_factory=None)
             equipped_weapon_edurance_int: int or str = field(default_factory=None)
@@ -218,13 +231,45 @@ class Command_Menu:
             weapon_abs_int: int or str = field(default_factory=None)
             
             
-            # class methods
-            @classmethod
+            # classes
             class Equip_Weapon():
+                
+                # class audio render methods
+                @classmethod
+                def __equip_wav__():
+                    # render sound .wav!
+                    # file path
+                    file_path = r"GenesisGirLessonsVOL.4\Lessons\DarkCloud\resources\Audio Resources\MENU FX\equip.wav" # wav file path
+
+                    # initalize mixer
+                    pygame.mixer.init()
+
+                    # create sound buffer
+                    equip_sound = pygame.mixer.Sound(file_path) # Create a new Sound object from a file or buffer object
+
+                    # set volume for .wav
+                    equip_sound.set_volume(0.2) # set the playback volume for this Sound
+
+                    # playback
+                    pygame.mixer.Sound.play(equip_sound, loops=0, maxtime=0, fade_ms=0) # begin sound playback play(loops=0, maxtime=0, fade_ms=0) -> Channel
+                    
+                    # log info
+                    logger.info("equip.wav rendered!")
+                    pass
+                
                 # docstring
                 """ # Equip Weapon Function
-                
+                Equips currently selected weapon to the player. This function can be used to equip a weapon to the player
                 """
+                
+                # render equip .wav!
+                __equip_wav__()
+                
+                # equip the player with selected weapon
+                player_equipped_weapon = selected_weapon
+                
+                # [INFO] [20]
+                logger.info(f"Player has equipped the {player_equipped_weapon} weapon")
                 pass
             
             @classmethod
@@ -233,6 +278,8 @@ class Command_Menu:
                 """ # Customize Weapon Function
                 
                 """
+            
+                
                 pass
             
             @classmethod
@@ -241,6 +288,41 @@ class Command_Menu:
                 """ # Equip Attributes Function
                 
                 """
+                
+                # class methods
+                @classmethod
+                def __equip_attr__():
+                    
+                    # render sound .wav!
+                    # file path
+                    file_path = r"GenesisGirLessonsVOL.4\Lessons\DarkCloud\resources\Audio Resources\MENU FX\attach.wav" # wav file path
+
+                    # initalize mixer
+                    pygame.mixer.init()
+
+                    # create sound buffer
+                    attach_sound = pygame.mixer.Sound(file_path) # Create a new Sound object from a file or buffer object
+
+                    # set volume for .wav
+                    attach_sound.set_volume(0.2) # set the playback volume for this Sound
+
+                    # playback
+                    pygame.mixer.Sound.play(attach_sound, loops=0, maxtime=0, fade_ms=0) # begin sound playback play(loops=0, maxtime=0, fade_ms=0) -> Channel
+
+                    # log info
+                    logger.info("attach.wav rendered!")
+                    pass
+
+
+                    
+                    
+                    pass
+                
+                # render attach .wav!
+                __equip_attr__()
+                
+                # attach attribute to currently selected player weapon
+                equipped_weapon_attribute = selected_weapon_attribute
                 pass
             
             @classmethod
@@ -285,7 +367,51 @@ class Command_Menu:
         Begin the re-assembly of your world after you have collected Atla. Use this option when in Edit Mode or in a Dungeon only. 
         You can view Georama in Walking Mode, but you will be unable to edit them.
         """
-        pass
+        
+        # import modules
+        from dataclasses import dataclass, field
+        import logging, logging.handlers
+        
+        # gloabls
+        
+        # variables
+        
+        # constants
+        
+        # fields/attrs
+        config_assemble: str 
+        
+        
+        
+        
+        # class  methods
+        @classmethod
+        def config_assembly():
+            # docstring
+            """ # config assembly
+            Configure/Assemble georama parts. This is the functionality that reverse engineers the config/assembly function from Dark Cloud
+            """
+            
+            
+            
+            
+            pass
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     @classmethod
