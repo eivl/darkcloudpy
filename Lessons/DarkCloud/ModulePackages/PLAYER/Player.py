@@ -100,12 +100,15 @@ class Player(): # player attributes/elements
     global player_thirst
     global player_level
     global player_exp
+    global player_equipped_weapon
+    
     
     # global player trait status variables
     global player_status
     
     # player variables
     player_nickname = None # user in-game nickname
+    player_equipped_weapon = None # current equipped weapon within the game (default = dagger)
     
     # player constants
     default_nickname = "Toan"
