@@ -45,6 +45,8 @@ logger = logger()
 
 # import modules
 from dataclasses import dataclass, fields
+
+# dataclass
 @dataclass
 class DarkPlayer:
     """ # DarkPlayer
@@ -52,7 +54,8 @@ class DarkPlayer:
     music and the 'dark_player_fx' responsible for ommiting sound fx.
     """
     
-    # methods
+    # class methods
+    @classmethod
     def dark_player_ost(filepath: str, volume: float = 0.2, x: int = -1, y: int = 0, z: int = 0):
         # docstring
         """The dark player is a function that ommits music to play in the backround of the the program and has a parameter called 'filepath'
@@ -126,6 +129,7 @@ class DarkPlayer:
         logger.info(".wav rendered!")
         pass
 
+    
     def dark_player_fx(filepath: str, volume: float = 0.2, x: int = -1, y: int = 0, z: int = 0):
         # docstring
         """The dark player fx is a function that ommits sounds to play in the the program and has the same parameters as DP. filepath = .wav path. 
@@ -208,5 +212,5 @@ class DarkPlayer:
         logger.info(".wav rendered!")
         pass
 
-# object instance
+# object instance/constructor
 DP = DarkPlayer()

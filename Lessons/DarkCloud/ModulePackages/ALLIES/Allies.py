@@ -116,26 +116,35 @@ class Allies(): # player attributes/elements
     ally_hunger_active_status: bool = field(default_factory=True)
     ally_thirst_active_status: bool = field(default_factory=True)
     
-    
-    
     # log info
     logging.info("player fields/attributes created")
     
+    
+    
     # class methods
+    @classmethod
     def __ally_name__(self):
-        
+        # return allies name in str data format
         return ally_name 
+    
+    @classmethod
     def __ally_health__(self):
-        
+        # return allies health in int data format
         return str(ally_health)
+    
+    @classmethod
     def __ally_hunger__(self): 
-        
+        # return allies hunger in str data format
         return ally_hunger 
+    
+    @classmethod
     def __ally_thirst__(self): 
-        
+        # return allies thirst in int data format
         return ally_thirst 
+    
+    @classmethod
     def __ally_experience__(self): 
-        
+        # return allies exp in int data format
         return ally_xp
     
     
@@ -143,13 +152,11 @@ class Allies(): # player attributes/elements
     pass
 
 # variables
-health = ally_health
-hunger = ally_hunger
-thirst = ally_thirst
-level = ally_level
-experience = ally_xp
+
 
 # object instances/initializers/constructors
-XIAO = Allies("Xiao", health, hunger, thirst, level, experience,)
-RUBY = Allies("Ruby", health, hunger, thirst, level, experience,)
-GORO = Allies("Goro", health, hunger, thirst, level, experience,)
+XIAO = Allies("Xiao", ally_health, ally_hunger, ally_thirst, ally_level, ally_xp,)
+RUBY = Allies("Ruby", ally_health, ally_hunger, ally_thirst, ally_level, ally_xp,)
+GORO = Allies("Goro", ally_health, ally_hunger, ally_thirst, ally_level, ally_xp,)
+
+XIAO.__ally_name__()

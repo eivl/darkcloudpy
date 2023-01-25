@@ -130,7 +130,7 @@ class Npc:
     key_items: tuple = field(default_factory=None)
     pass
 
-# object constructors
+# objecti instances/constructors
 MOTHER_NPC = Npc(name=MOTHER, 
     location=NORUNE_VILLAGE, 
     family=[player_nickname], 
