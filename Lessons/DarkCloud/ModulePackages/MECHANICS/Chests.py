@@ -113,7 +113,7 @@ although the floor title will often contain a hint such as "Sweet, Scary Treasur
     
     
     # chest RNG item list
-    chest_rng = [ # rng chest items
+    chest_rng_items = [
                 
                             # powder 'chest' rng items
                             REVIVAL_POWDER,
@@ -179,6 +179,68 @@ although the floor title will often contain a hint such as "Sweet, Scary Treasur
                             MIMIC_BREAKER_ATTRIBUTE,
                             MAGE_SLAYER_ATTRIBUTE,
                                                     ]
+    miracle_chest_rng_items = [
+                            
+                            # powerup 'miracle chest' rng items
+                            GOURD,
+                            FRUIT_OF_EDEN,
+                            
+                            # recovery 'miracle chest' rng items
+                            BREAD,
+                            CHEESE,
+                            MELLOW_BANANA,
+                            TASTY_WATER,
+                            SOAP,
+                            PREMIUM_WATER,
+                            ANTIDOTE_DRINK,
+                            PREMIUM_CHICKEN,
+                            HOLY_WATER,
+                            MIGHTY_HEALING,
+                            STAMINA_DRINK,
+                            THROBBING_CHERRY,
+                            BOMB,
+                            
+                            
+                            # attack attribute 'miracle chest' rng items
+                            ATTACK_ATTRIBUTE_1,
+                            ATTACK_ATTRIBUTE_2,
+                            ATTACK_ATTRIBUTE_3,
+                            
+                            # endurance attribute 'miracle chest' rng 
+                            ENDURANCE_ATTRIBUTE_1,
+                            ENDURANCE_ATTRIBUTE_2,
+                            ENDURANCE_ATTRIBUTE_3,
+                            
+                            
+                            # speed attribute 'miracle chest' rng
+                            SPEED_ATTRIBUTE_1,
+                            SPEED_ATTRIBUTE_2,
+                            SPEED_ATTRIBUTE_3,
+                            
+                            
+                            # magical attribute 'miracle chest' rng 
+                            MAGICAL_POWER_ATTRIBUTE_1,
+                            MAGICAL_POWER_ATTRIBUTE_2,
+                            MAGICAL_POWER_ATTRIBUTE_3,
+                            
+                            # common elemental attribute 'miracle chest' rng 
+                            FIRE_ATTRIBUTE,
+                            ICE_ATTRIBUTE,
+                            THUNDER_ATTRIBUTE,
+                            WIND_ATTRIBUTE,
+                            HOLY_ATTRIBUTE,
+                            DRAGON_SLAYER_ATTRIBUTE,
+                            UNDEAD_BUSTER_ATTRIBUTE,
+                            SEA_KILLER_ATTRIBUTE,
+                            STONE_BREAKER_ATTRIBUTE,
+                            PLANT_BUSTER_ATTRIBUTE,
+                            BEAST_HUNTER_ATTRIBUTE,
+                            SKY_HUNTER_ATTRIBUTE,
+                            METAL_BREAKER_ATTRIBUTE,
+                            MIMIC_BREAKER_ATTRIBUTE,
+                            MAGE_SLAYER_ATTRIBUTE,
+                                                    ]
+    treasure_chest_rng_items =  [] # <- create object # TODO
     
     # chest types
     CHEST ="Chest" # common items to aid user in the dungeon
@@ -187,6 +249,7 @@ although the floor title will often contain a hint such as "Sweet, Scary Treasur
     MIRACLE_CHEST = "Miracle Chest" # can be found in towns
     
     # stock chest item
+    chest_stock_item = None
     treasure_chest_stock_item = None
     miracle_chest_stock_item = None
     MIMIC_CHEST = None # create an attack user event function
@@ -197,7 +260,36 @@ although the floor title will often contain a hint such as "Sweet, Scary Treasur
     
     
     # class methods
-    pass
+    @classmethod
+    def __open__():
+        # docstring
+        """# __open__() function
+        Open the current selected chest that user has choosen"""
+        pass
+    
+    @classmethod
+    def __chest_rng__(chest):
+        # docstring
+        """# __chest_rng__() 
+        (function)
+        This class method will shuffle and pick a random item from the 
+        """
+        # dependant modules
+        import random
+        
+        # randomize chest items within array
+        random.shuffle(chest)
+        
+        # return item from array
+        item = random.choice(chest)
+        
+        return str(item)
+        pass
 
 
 # object instances/constructors
+CHEST = Chest()
+TRESURE_CHEST = Chest()
+MIRACLE_CHEST = Chest()
+MIMIC_CHEST = Chest()
+pass
