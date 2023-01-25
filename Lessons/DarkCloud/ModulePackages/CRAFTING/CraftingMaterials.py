@@ -19,7 +19,7 @@ This module contains all the classes, functions, variables and constants for the
 # import modules
 from dataclasses import dataclass
 
-# Spectrum constant types
+# Spectrum type names
 CYCLONE = "Cyclone"
 EXORCISM = "Exorcism"
 CHILL = "Chill"
@@ -53,23 +53,31 @@ class Crafting_Materials:
     Spectrum_type: str
     sound_filepath: str = r""
     
-    # methods
+    # class methods
+    @classmethod
     def __material_name__(self): 
         
         return Crafting_Materials.name
+    
+    @classmethod
     def __material_description__(self): 
         
         return Crafting_Materials.description
+    
+    @classmethod
     def __spectrum_int_value__(self): 
         
         return Crafting_Materials.Spectrum_int
+    
+    @classmethod
     def __spectrum_type__(self): 
         
         return Crafting_Materials.Spectrum_type
+    
+    @classmethod
     def __sound_filepath__(self): 
         
         return Crafting_Materials.sound_filepath
-    pass
 
 # object instances/constructors
 

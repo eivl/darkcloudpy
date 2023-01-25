@@ -94,7 +94,7 @@ class Boss:
     # global
     global MASTER_JACKET
     
-    # boss trait constants
+    # boss name
     MASTER_JACKET = 'Master Jacket'
     
     # fields/attrs
@@ -110,4 +110,3 @@ class Boss:
 
 # dueling bosses object instants/constructors
 MASTER_JACKET = Boss()
-

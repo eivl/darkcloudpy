@@ -91,7 +91,7 @@ logger = logger()
 class Player(): # player attributes/elements
     
     # docstring
-    """The PlayerTraits class is responsible for keeping the user's username, attributes, Level, Experience points and much more like ablities
+    """The Player class is responsible for keeping the user's username's, attributes, Level, Experience points and much more like ablities.
     """
     # global player trait variables
     global player_nickname
@@ -144,34 +144,47 @@ class Player(): # player attributes/elements
     logging.info("player fields/attributes created")
     
     # class methods
+    @classmethod
     def __player_name__(self): 
         
         return player_nickname
+    
+    @classmethod
     def __player_health__(self): 
         
         return player_health
+    
+    @classmethod
     def __player_status__(self): 
         
         return player_status
+    
+    @classmethod
     def __player_hunger__(self): 
         
         return player_hunger
+    
+    @classmethod
     def __player_thirst__(self): 
         
+    
         return player_thirst
+    
+    @classmethod
     def __player_level__(self): 
         
+    
         return player_level
+    
+    @classmethod
     def __player_experience__(self): 
         
         return player_exp
     
-    
-    # < - will think of some behaviors in the future
-    pass
+    # < - will think of some behaviors/functions in the future
 
 
-# variables
+# player variables
 NICKNAME = Player.__player_name__()
 health = Player.__player_health__()
 hunger = Player.__player_hunger__()
