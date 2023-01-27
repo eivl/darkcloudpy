@@ -94,7 +94,7 @@ class Player(): # player attributes/elements
     """The Player class is responsible for keeping the user's username's, attributes, Level, Experience points and much more like ablities.
     """
     # global player trait variables
-    global player_nickname
+    global PLAYER_NICKNAME
     global player_health
     global player_hunger
     global player_thirst
@@ -107,7 +107,7 @@ class Player(): # player attributes/elements
     global player_status
     
     # player variables
-    player_nickname = None # user in-game nickname
+    PLAYER_NICKNAME = None # user in-game nickname
     player_equipped_weapon = None # current equipped weapon within the game (default = dagger)
     
     # player constants
@@ -147,7 +147,7 @@ class Player(): # player attributes/elements
     @classmethod
     def __player_name__(self): 
         
-        return player_nickname
+        return PLAYER_NICKNAME
     
     @classmethod
     def __player_health__(self): 

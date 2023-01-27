@@ -1,7 +1,3 @@
-# importing modules
-from dataclasses import dataclass, field
-import logging, logging.handlers
-
 """ GenesisGirs typical logger preset
 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ
 
@@ -40,6 +36,7 @@ loggers as much as you can from my pack and see if you can create your very own 
 
 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ〤ㄖ〤ㄖ〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ
 """
+
 def logger(): # GenesisGir's typical logger preset! 🪵
     
     # importing modules
@@ -54,7 +51,7 @@ def logger(): # GenesisGir's typical logger preset! 🪵
     
     # File Handlers
     file_handler = logging.FileHandler( 
-    filename = r"GenesisGirLessonsVOL.4\Lessons\DarkCloud\Log\DarkCloud.log",
+    filename = r"",
     mode = 'w', # filemode 
     encoding = 'utf-8', # set encoding format
     delay = False, 
@@ -85,74 +82,90 @@ def logger(): # GenesisGir's typical logger preset! 🪵
 # logger variable
 logger = logger()
 
-# dataclasses
+# import modules
+from dataclasses import dataclass, field
+
+# dataclass
 @dataclass
-class Allies(): # player attributes/elements
+class Weapons():
     
-    # docstring
-    """The Allies class is responsible for keeping the allies's usernames, attributes, Levels, Experience points and much more like ablities.
-    """
-    # global ally traits variables
-    global ally_name 
-    global ally_health
-    global ally_hunger
-    global ally_thirst
-    global ally_level
-    global ally_xp
-    
-    # global ally trait status variables
-    global ally_hunger_active_status
-    global ally_thirst_active_status
-    
-    # ally fields/attributes
-    ally_name = str # ally name identifier
-    ally_health: int = field(default_factory=100) # default ally healh set to 100
-    ally_hunger: int = field(default_factory=100) # default ally hunger set to 100
-    ally_thirst: int = field(default_factory=0) # default ally thirst set to 100
-    ally_level: int = field(default_factory=1) # default ally level set to 1
-    ally_xp: int = field(default_factory=0) # default ally xp set to 0 xp
-    
-    # ally well being status's
-    ally_hunger_active_status: bool = field(default_factory=True)
-    ally_thirst_active_status: bool = field(default_factory=True)
-    
-    # log info
-    logging.info("player fields/attributes created")
-    
-    
+    # fields/attributes
+    name: str
+    whp_stats: int
+    inventory_description: str
+    abs_stats: int
+    attack_stats: int
+    endurance_stats: int
+    speed_stats: int
+    magic_power_stats: int
     
     # class methods
-    @classmethod
-    def __ally_name__(self):
-        # return allies name in str data format
-        return ally_name 
-    
-    @classmethod
-    def __ally_health__(self):
-        # return allies health in int data format
-        return str(ally_health)
-    
-    @classmethod
-    def __ally_hunger__(self): 
-        # return allies hunger in str data format
-        return ally_hunger 
-    
-    @classmethod
-    def __ally_thirst__(self): 
-        # return allies thirst in int data format
-        return ally_thirst 
-    
-    @classmethod
-    def __ally_experience__(self): 
-        # return allies exp in int data format
-        return ally_xp
-    
-    
-    # < - will think of some behaviors in the future
     pass
 
-# variables
+# object instances/constructors
+# Toan weapons
+DAGGER = Weapons(
+    name='Dagger',
+    whp_stats=48,
+    attack_stats=6,
+    abs_stats=32, 
+    inventory_description='Fairly easy to use. Default weapon.', 
+    endurance_stats=30,
+    magic_power_stats=2,
+    speed_stats=70)
+BASELARD = Weapons(
+    name='Baselard',
+    whp_stats=36,
+    attack_stats=8,
+    abs_stats=64, 
+    inventory_description='A big single-edged sword with long reach. Easy to use.', 
+    endurance_stats=20,
+    magic_power_stats=4,
+    speed_stats=60)
+CRYSKNIFE = Weapons(
+    name='Crysknife',
+    whp_stats=48,
+    attack_stats=12 ,
+    abs_stats=128, 
+    inventory_description='Stylet with magical power.', 
+    endurance_stats=25,
+    magic_power_stats=8,
+    speed_stats=70)
+GLADIUS = Weapons(
+    name='Gladius',
+    whp_stats=36,
+    attack_stats=10,
+    abs_stats=64,
+    inventory_description='Light wt. double-edged sword. Fairly high attack power.', 
+    endurance_stats=32,
+    magic_power_stats=6,
+    speed_stats=60)
+KITCHEN_KNIFE = Weapons(
+    name='Kitchen Knife',
+    whp_stats=55,
+    attack_stats=5,
+    abs_stats=160,
+    inventory_description='Low attack power but causes major damage to water monsters.', 
+    endurance_stats=22,
+    magic_power_stats=0,
+    speed_stats=80)
+BONE_RAPIER = Weapons(
+    name='Bone Rapier',
+    whp_stats=48,
+    attack_stats=15,
+    abs_stats=128,
+    inventory_description='Made of bone. Ability unknown.', 
+    endurance_stats=20,
+    magic_power_stats=30 ,
+    speed_stats=80)
 
-
-# object instances/initializers/constructors
-XIAO = Allies("Xiao", ally_health, ally_hunger, ally_thirst, ally_level, ally_xp,)
+# Xiao weapons
+WOODEN_SLINGSHOT = Weapons(
+    name='Wooden Slingshot',
+    whp_stats=48,
+    attack_stats=4,
+    abs_stats=40,
+    inventory_description='Slingshot made by carving wood. Default weapon.', 
+    endurance_stats=40,
+    magic_power_stats=0,
+    speed_stats=40)

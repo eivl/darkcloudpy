@@ -288,14 +288,19 @@ class Items:
 
 # object instances
 # powder class constructors
-REPAIR_POWDER = Items("Repair Powder","Recovers WHP of weapons.", 20, 10, CATEGORY_TYPE[0])
+REPAIR_POWDER = Items(
+    name="Repair Powder",
+    inventory_description= "Recovers WHP of weapons.", 
+    hp_restore=20, 
+    whp_restore= 10,
+    attribute_buff= CATEGORY_TYPE[0])
 AUTO_REPAIR_POWDER = Items("Set as an active item. Auto-repairs weapons about to break..", 200, 100, CATEGORY_TYPE[0])
 ESCAPE_POWDER = Items("Escape Powder","Having this allows an escape from dungeon with command.", 20, 10, CATEGORY_TYPE[0])
 POWERUP_POWDER = Items("Powerup Powder","Unconditionally power up weapon's grade.", None, 10, CATEGORY_TYPE[0])
 STAND_IN_POWDER = Items("Stand-in Powder","Can change to ally when current character's exhausted.", 50, 25, CATEGORY_TYPE[0])
 REVIVAL_POWDER = Items("Revival Powder","Revive from dying conditions.", 100, 50, CATEGORY_TYPE[0])
 #Key itsms
-
+DRANS_CREST = Items()
 
 # powerup item class constructors 
 GOURD = Items(name="Gourd", inventory_description="Increases max value of thirst meter.", effect= gourd_effect)
