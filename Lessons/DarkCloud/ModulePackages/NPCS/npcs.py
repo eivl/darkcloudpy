@@ -133,7 +133,7 @@ class Npc:
 # objecti instances/constructors
 MOTHER_NPC = Npc(name=MOTHER, 
     location=NORUNE_VILLAGE, 
-    family=[player_nickname], 
+    family=[PLAYER_NICKNAME], 
     key_items=MOTHER_ITEMS)
 ODD_GAFFER_NPC = Npc( name=ODD_GAFFER,
     location=NORUNE_VILLAGE)

@@ -124,7 +124,7 @@ class Atlas:
 
 # atlas npc object instants
 MACHO = Atlas(name="Macho", description="Macho like his name. Never skips training.", location=DIVINE_BEAST_CAVE, unlocked_status=False)
-RENEE = Atlas(name=player_nickname, description=f"{player_nickname}'s mother.", location=DIVINE_BEAST_CAVE, unlocked_status=False)
+RENEE = Atlas(name=PLAYER_NICKNAME, description=f"{PLAYER_NICKNAME}'s mother.", location=DIVINE_BEAST_CAVE, unlocked_status=False)
 KOMACHO = Atlas(name="Komacho", description="Short big brother to Macho.", location=DIVINE_BEAST_CAVE, unlocked_status=False)
 CLAUDE = Atlas(name="Claude", description="likeable guy. Loves eating & sleeping", location=DIVINE_BEAST_CAVE, unlocked_status=False)
 ODD_GAFFER = Atlas(name="Odd Gaffer", description="Gaffer who owns the local store.", location=DIVINE_BEAST_CAVE, unlocked_status=False)
