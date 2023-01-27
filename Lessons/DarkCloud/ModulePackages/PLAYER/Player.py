@@ -82,9 +82,13 @@ def logger(): # GenesisGir's typical logger preset! 🪵
     
     return logger
     pass
-    
+
 # logger variable
 logger = logger()
+
+
+# sub module package imports
+from ModulePackages.WEAPONS.weapons import *
 
 # dataclasses
 @dataclass
@@ -93,107 +97,83 @@ class Player(): # player attributes/elements
     # docstring
     """The Player class is responsible for keeping the user's username's, attributes, Level, Experience points and much more like ablities.
     """
-    # global player trait variables
+    
+    # globals
     global PLAYER_NICKNAME
     global player_health
     global player_hunger
     global player_thirst
     global player_level
-    global player_exp
-    global player_equipped_weapon
+    global player_experience_points
+    global healthy_condition
     
     
-    # global player trait status variables
-    global player_status
+    # player name constants
+    default_nickname = "Toan"
+    PLAYER_NICKNAME = default_nickname # user in-game nickname
     
     # player variables
-    PLAYER_NICKNAME = None # user in-game nickname
-    player_equipped_weapon = None # current equipped weapon within the game (default = dagger)
-    
-    # player constants
-    default_nickname = "Toan"
-    full_health = 100
-    full_hunger = 100
-    quenched_thirst = 100
-    default_level = 1
-    default_xp = 0
-    default_status = None
+    player_level = 1
+    player_experience_points = 1
+    player_health = 100
+    player_hunger = 0
+    player_thirst = 0
+    player_equipped_weapon = DAGGER 
     
     # player status variables
+    healthy_condition = True
     poison_condition = False
     gooey_condition = False
     curse_condition = False
     pumped_up_condition = False
     stop_condition = False
     
-    # lists, tuples, dicts
-    player_condition = [poison_condition , gooey_condition , curse_condition , pumped_up_condition, stop_condition ]
+    # player condition array
+    player_condition = [ 
+        
+        # conditions
+        poison_condition, 
+        gooey_condition, 
+        curse_condition , 
+        pumped_up_condition, 
+        stop_condition,
+        healthy_condition]
     
+    # player traits/well-being constants
+    full_health = 100
+    full_hunger = 100
+    quenched_thirst = 100
+    default_level = 1
+    default_xp = 0
+    default_status = healthy_condition
+    
+    
+
     # player fields/attributes
-    player_name: str = field(default_factory=default_nickname) # default name set to 'Toan'
-    player_health: int  = field(default_factory=full_health) # default player healh set to 100
-    player_hunger: int  = field(default_factory=full_hunger) # default player hunger set to 100
-    player_thirst: int  = field(default_factory=quenched_thirst) # default player thirst set to 100
-    player_level: int  = field(default_factory=default_level) # default player level set to 1
-    player_exp: int  = field(default_factory=default_xp) # default xp set to 0 xp
+    name: str = field(default_factory=default_nickname) # default name set to 'Toan'
+    health: int = field(default_factory=full_health) # default player healh set to 100
+    hunger: int = field(default_factory=0) # default player hunger set to 0
+    thirst: int = field(default_factory=quenched_thirst) # default player thirst set to 100
+    level: int = field(default_factory=default_level) # default player level set to 1
+    exp: int = field(default_factory=default_xp) # default xp set to 0 xp
     
     # player status field
     player_status: str  = field(default_factory=default_status)# default status is None
     
-    
+    # logging
     logging.info("player fields/attributes created")
     
-    # class methods
-    @classmethod
-    def __player_name__(self): 
-        
-        return PLAYER_NICKNAME
-    
-    @classmethod
-    def __player_health__(self): 
-        
-        return player_health
-    
-    @classmethod
-    def __player_status__(self): 
-        
-        return player_status
-    
-    @classmethod
-    def __player_hunger__(self): 
-        
-        return player_hunger
-    
-    @classmethod
-    def __player_thirst__(self): 
-        
-    
-        return player_thirst
-    
-    @classmethod
-    def __player_level__(self): 
-        
-    
-        return player_level
-    
-    @classmethod
-    def __player_experience__(self): 
-        
-        return player_exp
-    
+    # class methods    
     # < - will think of some behaviors/functions in the future
 
-
-# player variables
-NICKNAME = Player.__player_name__()
-health = Player.__player_health__()
-hunger = Player.__player_hunger__()
-thirst = Player.__player_thirst__()
-level = Player.__player_level__()
-experience = Player.__player_experience__()
-
-# object instances
-player = Player(NICKNAME, health, hunger, thirst, level, experience)
+# object instances/constructors/initializers
+player = Player(name=PLAYER_NICKNAME, 
+                health=player_health, 
+                hunger=player_hunger, 
+                thirst=player_thirst, 
+                level=player_level, 
+                exp=player_experience_points,
+                player_status=healthy_condition)
 
 
 

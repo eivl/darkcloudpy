@@ -51,7 +51,7 @@ def logger(): # GenesisGir's typical logger preset! 🪵
     
     # File Handlers
     file_handler = logging.FileHandler( 
-    filename = r"",
+    filename = r"GenesisGirLessonsVOL.4\Lessons\DarkCloud\Log\logger.log",
     mode = 'w', # filemode 
     encoding = 'utf-8', # set encoding format
     delay = False, 
@@ -247,7 +247,8 @@ CATEGORY_TYPE = ("Powder",
                             "Attachment",
                                 "Gemstone",
                                     "Power Up Item",
-                                    "Crafting Material",)
+                                    "Crafting Material",
+                                        "Key item")
 
 # shop names constants
 SHOPS = [GAFFERS_BUGGY,
@@ -293,21 +294,142 @@ REPAIR_POWDER = Items(
     inventory_description= "Recovers WHP of weapons.", 
     hp_restore=20, 
     whp_restore= 10,
-    attribute_buff= CATEGORY_TYPE[0])
-AUTO_REPAIR_POWDER = Items("Set as an active item. Auto-repairs weapons about to break..", 200, 100, CATEGORY_TYPE[0])
-ESCAPE_POWDER = Items("Escape Powder","Having this allows an escape from dungeon with command.", 20, 10, CATEGORY_TYPE[0])
-POWERUP_POWDER = Items("Powerup Powder","Unconditionally power up weapon's grade.", None, 10, CATEGORY_TYPE[0])
-STAND_IN_POWDER = Items("Stand-in Powder","Can change to ally when current character's exhausted.", 50, 25, CATEGORY_TYPE[0])
-REVIVAL_POWDER = Items("Revival Powder","Revive from dying conditions.", 100, 50, CATEGORY_TYPE[0])
-#Key itsms
-DRANS_CREST = Items()
+    effect=None,
+    buy_price=None,
+    sell_price=None,
+    item_type=CATEGORY_TYPE[5],
+    attribute_buff= CATEGORY_TYPE[0],
+    shop= SHOPS[0:],
+    dps=0,)
 
-# powerup item class constructors 
-GOURD = Items(name="Gourd", inventory_description="Increases max value of thirst meter.", effect= gourd_effect)
-FRUIT_OF_EDEN = Items(name="Fruit Of Eden", inventory_description="Incredibly Delicious Fruit. Increases max health value.")
-CHANGING_POTION = Items(name="Changing Potion", inventory_description="Magical potion that changes animal to human")
+
+AUTO_REPAIR_POWDER = Items(
+    name='Auto Repair Powder',
+    inventory_description= "Set as an active item. Auto-repairs weapons about to break..",
+    effect=None,
+    hp_restore=200,
+    whp_restore=100,
+    buy_price=None,
+    sell_price=None,
+    item_type= CATEGORY_TYPE[0],
+    dps=None,
+    attribute_buff=None,
+    shop=SHOPS[0:])
+ESCAPE_POWDER = Items(
+    name='Escape Powder',
+    inventory_description="Having this allows an escape from dungeon with command.",
+    effect=None,
+    hp_restore= None, 
+    whp_restore= None,
+    buy_price=None,
+    sell_price=None,
+    item_type= CATEGORY_TYPE[0],
+    dps=None,
+    attribute_buff=None,
+    shop=SHOPS[0:])
+POWERUP_POWDER = Items(
+    name='Powerup Powder',
+    inventory_description="Unconditionally power up weapon's grade.",
+    effect=None,
+    hp_restore= None, 
+    whp_restore= None,
+    buy_price=None,
+    sell_price=None,
+    item_type= CATEGORY_TYPE[0],
+    dps=None,
+    attribute_buff=None,
+    shop=SHOPS[0:])
+STAND_IN_POWDER = Items(
+    name='Stand-in Powder',
+    inventory_description="Can change to ally when current character's exhausted.",
+    effect=None,
+    hp_restore= None, 
+    whp_restore= None,
+    buy_price=50,
+    sell_price=25,
+    item_type= CATEGORY_TYPE[0],
+    dps=None,
+    attribute_buff=None,
+    shop=SHOPS[0:])
+REVIVAL_POWDER = Items(
+    name='Revival Powder',
+    inventory_description="Revive from dying conditions.",
+    effect=None,
+    hp_restore= None, 
+    whp_restore= None,
+    buy_price=100,
+    sell_price=50,
+    item_type= CATEGORY_TYPE[0],
+    dps=None,
+    attribute_buff=None,
+    shop=SHOPS[0:])
+
+#Key itsms
+DRANS_CREST = Items(
+    name='Drans Crest',
+    inventory_description="Key to the gate made by Dran to protect his own nest.",
+    effect=None,
+    hp_restore= None, 
+    whp_restore= None,
+    buy_price=None,
+    sell_price=None,
+    item_type= CATEGORY_TYPE[7],
+    dps=None,
+    attribute_buff=None,
+    shop=None)
+
+# powerup item class constructors
+# TODO give object instances all fields to prevent crashes 
+GOURD = Items(
+    name="Gourd", 
+    inventory_description="Increases max value of thirst meter.", 
+    effect= gourd_effect,
+    hp_restore= None, 
+    whp_restore= None,
+    buy_price=None,
+    sell_price=None,
+    item_type= CATEGORY_TYPE[5],
+    dps=None,
+    attribute_buff=None,
+    shop=None)
+FRUIT_OF_EDEN = Items(
+    name="Fruit Of Eden", 
+    inventory_description="Incredibly Delicious Fruit. Increases max health value.",
+    effect= None, # TODO create fruit of eden effect!
+    hp_restore= None, 
+    whp_restore= None,
+    buy_price=None,
+    sell_price=None,
+    item_type= CATEGORY_TYPE[5],
+    dps=None,
+    attribute_buff=None,
+    shop=None)
+CHANGING_POTION = Items(
+    name="Changing Potion", 
+    inventory_description="Magical potion that changes animal to human",
+    effect= None, # TODO create changing potion effect!
+    hp_restore= None, 
+    whp_restore= None,
+    buy_price=None,
+    sell_price=None,
+    item_type= CATEGORY_TYPE[5],
+    dps=None,
+    attribute_buff=None,
+    shop=None)
+
 #throwable object item instances
-BOMB = Items(name="Bomb", inventory_description="Throwing it at an enemy makes it explode, causing major damage")
+BOMB = Items(
+    name="Bomb", 
+    inventory_description="Throwing it at an enemy makes it explode, causing major damage",
+    effect=None,
+    hp_restore= None, 
+    whp_restore= None,
+    buy_price=80,
+    sell_price=40,
+    item_type= CATEGORY_TYPE[2],
+    dps=20,
+    attribute_buff=None,
+    shop=SHOPS[0:])
 
 # recovery item class constructors 
 BREAD = Items("Bread", "Eating it recovers health a little bit.", 50, None, None, 10, CATEGORY_TYPE[1])
@@ -359,36 +481,36 @@ ATTACK_ATTRIBUTE_1 = Items(
 # data
 name=attack_attribute[0:0], 
 inventory_description="Increases weapon attack power.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= attack_1_attr_int,
 shop= SHOPS[0:])
 ATTACK_ATTRIBUTE_2 = Items(
 # data
 name=attack_attribute[1:0], 
 inventory_description="Increases weapon attack power.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= attack_2_attr_int,
 shop= SHOPS[0:])
 ATTACK_ATTRIBUTE_3 = Items(
 # data
 name=attack_attribute[2:0], 
 inventory_description="Increases weapon attack power.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= attack_3_attr_int,
 shop= SHOPS[0:])
 
@@ -397,36 +519,36 @@ ENDURANCE_ATTRIBUTE_1 = Items(
 # data
 name=endurance_attribute[0:0], 
 inventory_description="Increases weapon attack power.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 260,
 sell_price= 130,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= endurance_1_attr_int,
 shop= SHOPS[0:])
 ENDURANCE_ATTRIBUTE_2 = Items(
 # data
 name=endurance_attribute[1:0], 
 inventory_description="Increases weapon attack power.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 260,
 sell_price= 130,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= endurance_2_attr_int,
 shop= SHOPS[0:])
 ENDURANCE_ATTRIBUTE_3 = Items(
 # data
 name=endurance_attribute[2:0], 
 inventory_description="Increases weapon attack power.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 260,
 sell_price= 130,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= endurance_3_attr_int,
 shop= SHOPS[0:])
 
@@ -435,36 +557,36 @@ SPEED_ATTRIBUTE_1 = Items(
 # data
 name=speed_attribute[0:0], 
 inventory_description="Weapons' speed bar fill up faster.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 260,
 sell_price= 130,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
-#attribute_buff= None,
+dps= None,
+attribute_buff= None,
 shop= SHOPS[1:])
 SPEED_ATTRIBUTE_2 = Items(
 # data
 name=speed_attribute[1:0], 
 inventory_description="Weapons' speed bar fill up faster.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 260,
 sell_price= 130,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= speed_2_attr_int,
 shop= SHOPS[1:])
 SPEED_ATTRIBUTE_3 = Items(
 # data
 name=speed_attribute[2:0], 
 inventory_description="Weapons' speed bar fill up faster.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 260,
 sell_price= 130,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= speed_3_attr_int,
 shop= SHOPS[1:])
 
@@ -473,36 +595,36 @@ MAGICAL_POWER_ATTRIBUTE_1 = Items(
 # data
 name=magical_power_attribute[0:0], 
 inventory_description="Increases effect of attributes.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 260,
 sell_price= 130,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= magical_power_1_attr_int,
 shop= SHOPS[1:])
 MAGICAL_POWER_ATTRIBUTE_2 = Items(
 # data
 name=magical_power_attribute[1:0], 
 inventory_description="Increases effect of attributes.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 260,
 sell_price= 130,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= magical_power_2_attr_int,
 shop= SHOPS[1:])
 MAGICAL_POWER_ATTRIBUTE_3 = Items(
 # data
 name=magical_power_attribute[2:0], 
 inventory_description="Increases effect of attributes.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 260,
 sell_price= 130,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= magical_power_3_attr_int,
 shop= SHOPS[1:])
 
@@ -511,193 +633,219 @@ FIRE_ATTRIBUTE = Items(
 # data
 name=fire_attribute[0], 
 inventory_description="Gives weapons the fire attribute.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= fire_attr_int,
 shop= SHOPS[1:])
 ICE_ATTRIBUTE = Items(
 # data
 name=ice_attribute[0], 
 inventory_description="	Gives weapons the ice attribute.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= ice_attr_int,
 shop= SHOPS[1:])
 THUNDER_ATTRIBUTE = Items(
 # data
 name=thunder_attribute[0], 
 inventory_description="	Gives weapons the thunder attribute.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= thunder_attr_int,
 shop= SHOPS[1:])
 WIND_ATTRIBUTE = Items(
 # data
 name=wind_attribute[0], 
 inventory_description="	Gives weapons the wind attribute.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= wind_attr_int,
 shop= SHOPS[1:])
 HOLY_ATTRIBUTE = Items(
 # data
 name=holy_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= holy_attr_int,
 shop= SHOPS[1:])
 DRAGON_SLAYER_ATTRIBUTE = Items(
 # data
 name=dragon_slayer_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= dragon_slayer_attr_int,
 shop= SHOPS[1:])
 UNDEAD_BUSTER_ATTRIBUTE = Items(
 # data
 name=undead_buster_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= undead_buster_attr_int,
 shop= SHOPS[1:])
 SEA_KILLER_ATTRIBUTE = Items(
 # data
 name=sea_killer_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= sea_killer_attr_int,
 shop= SHOPS[1:])
 STONE_BREAKER_ATTRIBUTE = Items(
 # data
 name=stone_breaker_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= stone_breaker_attr_int,
 shop= SHOPS[1:])
 PLANT_BUSTER_ATTRIBUTE = Items(
 # data
 name=plant_buster_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= plant_buster_attr_int,
 shop= SHOPS[1:])
 BEAST_HUNTER_ATTRIBUTE = Items(
 # data
 name=beast_hunter_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= beast_hunter_attr_int,
 shop= SHOPS[1:])
 SKY_HUNTER_ATTRIBUTE = Items(
 # data
 name=sky_hunter_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= sky_hunter_attr_int,
 shop= SHOPS[1:])
 METAL_BREAKER_ATTRIBUTE = Items(
 # data
 name=metal_breaker_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= metal_breaker_attr_int,
 shop= SHOPS[1:])
 MIMIC_BREAKER_ATTRIBUTE = Items(
 # data
 name=mimic_breaker_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= mimic_breaker_attr_int,
 shop= SHOPS[1:])
 MAGE_SLAYER_ATTRIBUTE = Items(
 # data
 name=mage_slayer_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
-#hp_restore= None,
-#whp_restore= None ,
+hp_restore= None,
+whp_restore= None ,
 buy_price= 300,
 sell_price= 150,
 item_type= CATEGORY_TYPE[4],
-#dps= None,
+dps= None,
 attribute_buff= mage_slayer_attr_int,
 shop= SHOPS[1:])
 
 # Miscellaneous item class constructors/object instances
 CAVE_KEY =Items(
+    
     name=CAVE_KEY, 
-    inventory_description="Received from the Mayor at the start of the game to enter the Divine Beast Cave.")
+    inventory_description="Received from the Mayor at the start of the game to enter the Divine Beast Cave.",
+    hp_restore= None,
+    whp_restore= None ,
+    buy_price= None,
+    sell_price= None,
+    item_type= None,
+    dps= None,
+    attribute_buff= None,
+    shop=None)
+
 HORNED_KEY_OBJ = Items(
     name=HORNED_KEY, 
-    inventory_description="Received after the completion of Dran's windmill. Used to enter the boss room at the end of the Divine Beast Cave.")
+    inventory_description="Received after the completion of Dran's windmill. Used to enter the boss room at the end of the Divine Beast Cave.",
+    hp_restore= None,
+    whp_restore= None ,
+    buy_price= None,
+    sell_price= None,
+    item_type= None,
+    dps= None,
+    attribute_buff= None,
+    shop=None)
 TREASURE_CHEST_KEY_OBJ = Items(
     name=TREASURE_CHEST_KEY,
-    inventory_description="Used to unlock locked treasure chests, also bypasses traps.")
+    inventory_description="Used to unlock locked treasure chests, also bypasses traps.",
+    hp_restore= None,
+    whp_restore= None ,
+    buy_price= None,
+    sell_price= None,
+    item_type= None,
+    dps= None,
+    attribute_buff= None,
+    shop=None)
 
 
 

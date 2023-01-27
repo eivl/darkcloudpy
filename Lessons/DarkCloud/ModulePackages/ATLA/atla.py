@@ -59,7 +59,7 @@ def logger(): # GenesisGir's typical logger preset! 🪵
     
     # File Handlers
     file_handler = logging.FileHandler( 
-    filename = r"",
+    filename = r"GenesisGirLessonsVOL.4\Lessons\DarkCloud\Log\logger.log",
     mode = 'w', # filemode 
     encoding = 'utf-8', # set encoding format
     delay = False, 
@@ -150,7 +150,7 @@ UPSTAIRS_STORAGE = Atlas(name="Upstairs Storage", description="Storage area for 
 BRIDGE = Atlas(name="Bridge", description="Needed for crossing rivers", location=DIVINE_BEAST_CAVE, unlocked_status=False)
 GAFFER_BUGGY = Atlas(name="Gaffer's Buggy", description="Odd Gaffer's Buggy. Local Merchant", location=DIVINE_BEAST_CAVE, unlocked_status=False)
 CHIMNEY = Atlas(name="Chimney",description="Releases smoke of fire places.",location=DIVINE_BEAST_CAVE,unlocked_status=False)
-SUPPLIES = Atlas(name="Supplies",descfiption="Filled with goods sold by Odd Gaffer",location=DIVINE_BEAST_CAVE, unlocked_status=False)
+SUPPLIES = Atlas(name="Supplies",description="Filled with goods sold by Odd Gaffer",location=DIVINE_BEAST_CAVE, unlocked_status=False)
 LLAMA = Atlas(name="Llama", description="{player_nickname}'s Llama. Important livestock", location=DIVINE_BEAST_CAVE, unlocked_status=False)
 LADDER = Atlas(name="Ladder", description="Used to climb high places.", location=DIVINE_BEAST_CAVE, unlocked_status=False)
 
