@@ -1,7 +1,3 @@
-# importing modules
-from dataclasses import dataclass, field
-import logging, logging.handlers
-
 """ GenesisGirs typical logger preset
 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ
 
@@ -40,6 +36,7 @@ loggers as much as you can from my pack and see if you can create your very own 
 
 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ〤ㄖ〤ㄖ〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ
 """
+
 def logger(): # GenesisGir's typical logger preset! 🪵
     
     # importing modules
@@ -54,7 +51,7 @@ def logger(): # GenesisGir's typical logger preset! 🪵
     
     # File Handlers
     file_handler = logging.FileHandler( 
-    filename = r"GenesisGirLessonsVOL.4\Lessons\DarkCloud\Log\DarkCloud.log",
+    filename = r"",
     mode = 'w', # filemode 
     encoding = 'utf-8', # set encoding format
     delay = False, 
@@ -85,74 +82,201 @@ def logger(): # GenesisGir's typical logger preset! 🪵
 # logger variable
 logger = logger()
 
+
+# import modules
+from dataclasses import dataclass, field
+from ModulePackages.ITEMS.items import *
+from ModulePackages.PLAYER.Player import *
+
 # dataclasses
-@dataclass
-class Allies(): # player attributes/elements
+@dataclass(frozen=True)
+class Monster:
     
-    # docstring
-    """The Allies class is responsible for keeping the allies's usernames, attributes, Levels, Experience points and much more like ablities.
-    """
-    # global ally traits variables
-    global ally_name 
-    global ally_health
-    global ally_hunger
-    global ally_thirst
-    global ally_level
-    global ally_xp
-    
-    # global ally trait status variables
-    global ally_hunger_active_status
-    global ally_thirst_active_status
-    
-    # ally fields/attributes
-    ally_name = str # ally name identifier
-    ally_health: int = field(default_factory=100) # default ally healh set to 100
-    ally_hunger: int = field(default_factory=100) # default ally hunger set to 100
-    ally_thirst: int = field(default_factory=0) # default ally thirst set to 100
-    ally_level: int = field(default_factory=1) # default ally level set to 1
-    ally_xp: int = field(default_factory=0) # default ally xp set to 0 xp
-    
-    # ally well being status's
-    ally_hunger_active_status: bool = field(default_factory=True)
-    ally_thirst_active_status: bool = field(default_factory=True)
-    
-    # log info
-    logging.info("player fields/attributes created")
-    
+    # fields/attributes
+    name: str
+    type: str
+    hit_points: int
+    abs: int
+    defend: bool
+    item_steal: field(default_factory=None)
     
     
     # class methods
+    # Monster RNG
     @classmethod
-    def __ally_name__(self):
-        # return allies name in str data format
-        return ally_name 
+    def __monster_rng__():
+        
+        # docstring
+        """
+        # __monster__()
+        (function)
+        Monster randomization for the monster.py for the game, uses the random module to add a sense of rng to the game..simple!
+        """
+        
+        # module imports
+        import random # <- using for the randomzization of the monster_rng array list
+        
+        # array
+        monster_rng = [
+            
+            # monsters
+            CAVE_BAT.name, 
+                RAM.name, 
+                    DRAGON.name, 
+                        GHOST.name, 
+                            KING_MIMIC.name, 
+                                MIMIC.name, 
+                                    OPAR.name,
+                                    IVANOFF.name,
+                                    STATUE.name,
+                                    DOG_STATUE.name,
+                                    DARKNESS.name]
+        
+        
+        # arbitrary monster rng
+        monster = random.choice(monster_rng)
+        
+        # display monster encounter to user
+        print("A %s has appeared!" %(monster))
+        pass
     
+    # Item RNG
     @classmethod
-    def __ally_health__(self):
-        # return allies health in int data format
-        return str(ally_health)
-    
-    @classmethod
-    def __ally_hunger__(self): 
-        # return allies hunger in str data format
-        return ally_hunger 
-    
-    @classmethod
-    def __ally_thirst__(self): 
-        # return allies thirst in int data format
-        return ally_thirst 
-    
-    @classmethod
-    def __ally_experience__(self): 
-        # return allies exp in int data format
-        return ally_xp
-    
-    
-    # < - will think of some behaviors in the future
+    def __item_drop__(monster: str):
+        
+        # docstring
+        """
+        # __item_drop__()
+        (function)
+        
+        The function responsible for dropping rng items to user in a arbitrary manner using the 'random.choice()'. It derives the items from
+        the 'rng' array which is a tuple. the items from the rng items list are as follows:
+        
+        DRANS_CREST.name \n
+        MELLOW_BANANA.name \n
+        BREAD.name \n
+        REPAIR_POWDER.name \n
+        TASTY_WATER.name \n
+        ESCAPE_POWDER.name \n 
+        PREMIUM_WATER.name \n
+        SOAP.name \n
+        REVIVAL_POWDER.name \n
+        """
+        
+        # module imports
+        import random
+        
+        # item drop array
+        rng = [
+            DRANS_CREST.name, # divine floor key
+            MELLOW_BANANA.name,
+            BREAD.name, 
+            REPAIR_POWDER.name, 
+            TASTY_WATER.name, 
+            ESCAPE_POWDER.name,  
+            PREMIUM_WATER.name, 
+            SOAP.name, REVIVAL_POWDER.name,
+            None]
+        
+        # drop item from rng array from defeated monster
+        drop = random.choice(rng)
+        
+        # item drop flow controls
+        if drop == DRANS_CREST.name:
+            
+            # drans crest dungeon key collected
+            print(f'"{drop}" acquired.')
+            
+            # key duplication prevention
+            del rng[0]
+        
+        return drop
+        pass
     pass
 
-# variables
+# object instances/constructors for the monster class
 
-
-# object instances/initializers/constructors
-XIAO = Allies("Xiao", ally_health, ally_hunger, ally_thirst, ally_level, ally_xp,)
+SKELETON_SOLDIER = Monster(
+    name='Skeleton Soldier',
+    type='Undead',
+    hit_points=23,
+    abs=3,
+    defend=True,
+    item_steal=None)
+CAVE_BAT = Monster(
+    name='Cave Bat',
+    type='Sky',
+    hit_points=12,
+    abs=3,
+    defend=False,
+    item_steal=ANTIDOTE_DRINK)
+RAM = Monster(
+    name='Dasher',
+    type='Beast',
+    hit_points=23,
+    abs=3,
+    defend=False,
+    item_steal=BREAD)
+DRAGON = Monster(
+    name='Dragon',
+    type='Dragon',
+    hit_points=90,
+    abs=5,
+    defend=True,
+    item_steal=None)
+GHOST = Monster(
+    name='Ghost',
+    type='Mage',
+    hit_points=15,
+    abs=3,
+    defend=False,
+    item_steal=None)
+KING_MIMIC = Monster(
+    name='King Mimic',
+    type='Mimic',
+    hit_points=70,
+    abs=6,
+    defend=True,
+    item_steal=REPAIR_POWDER)
+MIMIC = Monster(
+    name='Mimic',
+    type='Mimic',
+    hit_points=70,
+    abs=6,
+    defend=True,
+    item_steal=REPAIR_POWDER)
+OPAR = Monster(
+    name='Opar',
+    type='Marine',
+    hit_points=28,
+    abs=3,
+    defend=True,
+    item_steal=None)
+IVANOFF = Monster(
+    name='Rockanoff',
+    type='Stone',
+    hit_points=30,
+    abs=3,
+    defend=False,
+    item_steal=None)
+STATUE = Monster(
+    name='Statue',
+    type='Stone',
+    hit_points=38,
+    abs=3,
+    defend=False,
+    item_steal=None)
+DOG_STATUE = Monster(
+    name='Statue Dog',
+    type='Stone',
+    hit_points=15,
+    abs=2,
+    defend=True,
+    item_steal=None)
+DARKNESS = Monster(
+    name='Yammich',
+    type='Stone',
+    hit_points=15,
+    abs=2,
+    defend=True,
+    item_steal=None)
