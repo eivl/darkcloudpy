@@ -56,7 +56,7 @@ def logger(): # GenesisGir's typical logger preset! 🪵
     
     # File Handlers
     file_handler = logging.FileHandler( 
-    filename = r"",
+    filename = r"GenesisGirLessonsVOL.4\Lessons\DarkCloud\Log\logger.log",
     mode = 'w', # filemode 
     encoding = 'utf-8', # set encoding format
     delay = False, 

@@ -13,7 +13,7 @@ def logger(): # Genesis Gir's typical logger preset! 🪵
     
     #File Handlers
     file_handler = logging.FileHandler( 
-    filename = r"GenesisGirLessonsVOL.3\Lessons\Cooking Mama 3 Shop & Chop\log.log",
+    filename = r"GenesisGirLessonsVOL.4\Lessons\DarkCloud\Log\logger.log",
     mode = 'w', # filemode 
     encoding = 'utf-8', # set encoding format
     delay = False, 
@@ -93,7 +93,7 @@ class DarkPlayer:
         # initalize mixer
         pygame.mixer.init()
 
-        # create sound object
+        # create sound buffer object
         song = pygame.mixer.music(path) # Create a new Sound object from a file or buffer object
 
         """ <- pygame.mixer.music docstring

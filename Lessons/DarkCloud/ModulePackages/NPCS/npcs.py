@@ -51,7 +51,7 @@ def logger(): # GenesisGir's typical logger preset! 🪵
     
     # File Handlers
     file_handler = logging.FileHandler( 
-    filename = r"",
+    filename = r"GenesisGirLessonsVOL.4\Lessons\DarkCloud\Log\logger.log",
     mode = 'w', # filemode 
     encoding = 'utf-8', # set encoding format
     delay = False, 
@@ -133,7 +133,7 @@ class Npc:
 # objecti instances/constructors
 MOTHER_NPC = Npc(name=MOTHER, 
     location=NORUNE_VILLAGE, 
-    family=[player_nickname], 
+    family=[PLAYER_NICKNAME], 
     key_items=MOTHER_ITEMS)
 ODD_GAFFER_NPC = Npc( name=ODD_GAFFER,
     location=NORUNE_VILLAGE)

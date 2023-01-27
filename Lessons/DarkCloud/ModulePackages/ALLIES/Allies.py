@@ -92,20 +92,9 @@ class Allies(): # player attributes/elements
     # docstring
     """The Allies class is responsible for keeping the allies's usernames, attributes, Levels, Experience points and much more like ablities.
     """
-    # global ally traits variables
-    global ally_name 
-    global ally_health
-    global ally_hunger
-    global ally_thirst
-    global ally_level
-    global ally_xp
-    
-    # global ally trait status variables
-    global ally_hunger_active_status
-    global ally_thirst_active_status
     
     # ally fields/attributes
-    ally_name = str # ally name identifier
+    ally_name: str # ally name identifier
     ally_health: int = field(default_factory=100) # default ally healh set to 100
     ally_hunger: int = field(default_factory=100) # default ally hunger set to 100
     ally_thirst: int = field(default_factory=0) # default ally thirst set to 100
@@ -119,40 +108,20 @@ class Allies(): # player attributes/elements
     # log info
     logging.info("player fields/attributes created")
     
-    
-    
-    # class methods
-    @classmethod
-    def __ally_name__(self):
-        # return allies name in str data format
-        return ally_name 
-    
-    @classmethod
-    def __ally_health__(self):
-        # return allies health in int data format
-        return str(ally_health)
-    
-    @classmethod
-    def __ally_hunger__(self): 
-        # return allies hunger in str data format
-        return ally_hunger 
-    
-    @classmethod
-    def __ally_thirst__(self): 
-        # return allies thirst in int data format
-        return ally_thirst 
-    
-    @classmethod
-    def __ally_experience__(self): 
-        # return allies exp in int data format
-        return ally_xp
-    
-    
     # < - will think of some behaviors in the future
     pass
 
-# variables
-
-
 # object instances/initializers/constructors
-XIAO = Allies("Xiao", ally_health, ally_hunger, ally_thirst, ally_level, ally_xp,)
+XIAO = Allies(
+    
+    # ally fields
+    ally_name='Xiao', 
+    ally_health=100, 
+    ally_hunger=100, 
+    ally_thirst=0, 
+    ally_level=1, 
+    ally_xp=0,
+    
+    # ally well being status's
+    ally_hunger_active_status=True,
+    ally_thirst_active_status=True)
