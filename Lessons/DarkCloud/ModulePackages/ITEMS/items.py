@@ -379,7 +379,7 @@ DRANS_CREST = Items(
     shop=None)
 
 # powerup item class constructors
-# TODO give object instances all fields to prevent crashes 
+
 GOURD = Items(
     name="Gourd", 
     inventory_description="Increases max value of thirst meter.", 
@@ -430,50 +430,181 @@ BOMB = Items(
     dps=20,
     attribute_buff=None,
     shop=SHOPS[0:])
+BOMB_NUT = Items(
+    name="Bomb Nut", 
+    inventory_description="Hitting enemy with it make it explode and cause damage.",
+    effect=None,
+    hp_restore= None, 
+    whp_restore= None,
+    buy_price=90,
+    sell_price=45,
+    item_type= CATEGORY_TYPE[2],
+    dps=10000, # major damage for a nut!
+    attribute_buff=None,
+    shop=SHOPS[0:])
 
+
+
+
+# TODO give object instances all fields to prevent crashes 
 # recovery item class constructors 
-BREAD = Items("Bread", "Eating it recovers health a little bit.", 50, None, None, 10, CATEGORY_TYPE[1])
-CHEESE = Items("Cheese", "Eating it allows fairly good recovery of health.", 80, None, None, 30, CATEGORY_TYPE[1])
-MELLOW_BANANA = Items("Mellow Banana", "It recovers HP but make you feel thirsty.", 170, None, None, 45, CATEGORY_TYPE[1])
-PREMIUM_CHICKEN = Items("Premium_Chicken", "Eating it completely recovers health..", 170, None, None, 65, CATEGORY_TYPE[1])
-REGULAR_WATER = Items("Regular Water", "Usual water. Quenches thirst a little bit.", 3, None, None, 5, CATEGORY_TYPE[1])
-TASTY_WATER = Items("Tasty Water", "Water from rugged mountain. Nearly quenches thirst.", 5, None, None, 15, CATEGORY_TYPE[1])
-PREMIUM_WATER = Items("Premium Water", "Amazing water of fairy spring. Completely quenches thirst.", 10, None, None, 30, CATEGORY_TYPE[1])
-ANTIDOTE_DRINK = Items("Antidote Drink", "Drinking it neutralizes the poison in the body.", False, None, None, 40, CATEGORY_TYPE[1]) # cures poison
-SOAP = Items("Soap", "Releases from gooey condition.", False, None, None, 50, CATEGORY_TYPE[1]) # cures gooey condition
-HOLY_WATER = Items("Holy Water", "Releases from spell. Causes major damage to the undead.", False, None, None, 60, CATEGORY_TYPE[1], 1000) # cures curse condition
-MIGHTY_HEALING = Items("Mighty Healing", "Heals all conditions.", False, None, None, 150, CATEGORY_TYPE[1]) # cures all conditions
+BREAD = Items(
+    name="Bread",
+    inventory_description="Eating it recovers health a little bit.",
+    effect= None, 
+    hp_restore= 50, 
+    whp_restore= None,
+    buy_price=10,
+    sell_price=10,
+    item_type= CATEGORY_TYPE[5],
+    dps=None,
+    attribute_buff=None,
+    shop=SHOPS[0:])
+CHEESE = Items(
+    name="Cheese",
+    inventory_description="Eating it allows fairly good recovery of health.",
+    effect= None, 
+    hp_restore= 50, 
+    whp_restore= None,
+    buy_price=10,
+    sell_price=30,
+    item_type= CATEGORY_TYPE[1],
+    dps=None,
+    attribute_buff=None,
+    shop=SHOPS[0:])
+MELLOW_BANANA = Items(
+    name="Mellow Banana",
+    inventory_description="It recovers HP but make you feel thirsty.",
+    effect= None, 
+    hp_restore= 50, 
+    whp_restore= None,
+    buy_price=10,
+    sell_price=40,
+    item_type= CATEGORY_TYPE[1],
+    dps=None,
+    attribute_buff=None,
+    shop=SHOPS[0:])
+PREMIUM_CHICKEN = Items(
+    name="Premium Chicken",
+    inventory_description="Eating it completely recovers health..",
+    effect= None, 
+    hp_restore= 50, 
+    whp_restore= None,
+    buy_price=170,
+    sell_price=65,
+    item_type= CATEGORY_TYPE[1],
+    dps=None,
+    attribute_buff=None,
+    shop=SHOPS[0:])
+REGULAR_WATER = Items(
+    name="Regular Water",
+    inventory_description="Usual water. Quenches thirst a little bit.",
+    effect= None, 
+    hp_restore= 50, 
+    whp_restore= None,
+    buy_price=170,
+    sell_price=5,
+    item_type= CATEGORY_TYPE[1],
+    dps=None,
+    attribute_buff=None,
+    shop=SHOPS[0:])
+TASTY_WATER = Items(
+    name="Tasty Water",
+    inventory_description="Water from rugged mountain. Nearly quenches thirst.",
+    effect= None, 
+    hp_restore= 50, 
+    whp_restore= None,
+    buy_price=20,
+    sell_price=15,
+    item_type= CATEGORY_TYPE[1],
+    dps=None,
+    attribute_buff=None,
+    shop=SHOPS[0:])
+PREMIUM_WATER = Items(
+    name="Premium Water",
+    inventory_description="Amazing water of fairy spring. Completely quenches thirst.",
+    effect= None, 
+    hp_restore= 50, 
+    whp_restore= None,
+    buy_price=45,
+    sell_price=30,
+    item_type= CATEGORY_TYPE[1],
+    dps=None,
+    attribute_buff=None,
+    shop=SHOPS[0:])
+ANTIDOTE_DRINK = Items(
+    name="Antidote Drink",
+    inventory_description="Drinking it neutralizes the poison in the body.",
+    effect= None, 
+    hp_restore= 50, 
+    whp_restore= None,
+    buy_price=45,
+    sell_price=40,
+    item_type= CATEGORY_TYPE[1],
+    dps=None,
+    attribute_buff=None,
+    shop=SHOPS[0:]) 
+SOAP = Items(
+    name="Soap",
+    inventory_description="Releases from gooey condition.",
+    effect= None, 
+    hp_restore= 50, 
+    whp_restore= None,
+    buy_price=55,
+    sell_price=50,
+    item_type= CATEGORY_TYPE[1],
+    dps=None,
+    attribute_buff=None,
+    shop=SHOPS[0:]) 
+HOLY_WATER = Items(
+    name="Holy Water",
+    inventory_description="Releases from spell. Causes major damage to the undead.",
+    effect= None, 
+    hp_restore= 50, 
+    whp_restore= None,
+    buy_price=70,
+    sell_price=60,
+    item_type= CATEGORY_TYPE[1],
+    dps=1000,
+    attribute_buff=None,
+    shop=SHOPS[0:]) # cures curse condition
+MIGHTY_HEALING = Items(
+    name="Mighty Healing",
+    inventory_description="Heals all conditions.",
+    effect= None, 
+    hp_restore= 50, 
+    whp_restore= None,
+    buy_price=200,
+    sell_price=150,
+    item_type= CATEGORY_TYPE[1],
+    dps=1000,
+    attribute_buff=None,
+    shop=SHOPS[0:]) # cures all conditions
 STAMINA_DRINK = Items( # <- Grants Pumped Up condition.
-# item name
-name="Stamina Drink",
-
-# item description
-inventory_description="Drinking it increases power. Ability temporarily increases.", 
-
-# health point restore values
-hp_restore= True, 
-
-# weapon restore point values
-whp_restore= None, 
-
-# item price
-buy_price= None, 
-
-# item selling price
-sell_price= 150, 
-
-# item types
-item_type= CATEGORY_TYPE[1]) 
+    name="Stamina Drink",
+    inventory_description="Drinking it increases power. Ability temporarily increases.",
+    effect= None, 
+    hp_restore= None, 
+    whp_restore= None,
+    buy_price=200,
+    sell_price=150,
+    item_type= CATEGORY_TYPE[1],
+    dps=1000,
+    attribute_buff=None,
+    shop=SHOPS[0:]) 
 THROBBING_CHERRY= Items( # <- Cures Stop.
-                        
-# data
-name= "Throbbing Cherry", 
-inventory_description= "Play tag to stop the enemy. Use from menu to cure stop.", 
-hp_restore= False,
-whp_restore= None, 
-buy_price= None, 
-sell_price= 150, 
-item_type= CATEGORY_TYPE[1]) 
+    
+    name= "Throbbing Cherry", 
+    inventory_description= "Play tag to stop the enemy. Use from menu to cure stop.",
+    effect= None,
+    hp_restore= False,
+    whp_restore= None, 
+    buy_price= None, 
+    sell_price= 150, 
+    item_type= CATEGORY_TYPE[1],
+    dps=1000,
+    attribute_buff=None,
+    shop=SHOPS[0:]) 
 
 # attribute attachments class objects/constructors
 # attack attributes objects
