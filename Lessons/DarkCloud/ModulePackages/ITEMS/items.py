@@ -443,10 +443,6 @@ BOMB_NUT = Items(
     attribute_buff=None,
     shop=SHOPS[0:])
 
-
-
-
-# TODO give object instances all fields to prevent crashes 
 # recovery item class constructors 
 BREAD = Items(
     name="Bread",
@@ -612,6 +608,7 @@ ATTACK_ATTRIBUTE_1 = Items(
 # data
 name=attack_attribute[0:0], 
 inventory_description="Increases weapon attack power.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 300,
@@ -624,6 +621,7 @@ ATTACK_ATTRIBUTE_2 = Items(
 # data
 name=attack_attribute[1:0], 
 inventory_description="Increases weapon attack power.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 300,
@@ -636,6 +634,7 @@ ATTACK_ATTRIBUTE_3 = Items(
 # data
 name=attack_attribute[2:0], 
 inventory_description="Increases weapon attack power.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 300,
@@ -650,6 +649,7 @@ ENDURANCE_ATTRIBUTE_1 = Items(
 # data
 name=endurance_attribute[0:0], 
 inventory_description="Increases weapon attack power.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 260,
@@ -662,6 +662,7 @@ ENDURANCE_ATTRIBUTE_2 = Items(
 # data
 name=endurance_attribute[1:0], 
 inventory_description="Increases weapon attack power.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 260,
@@ -674,6 +675,7 @@ ENDURANCE_ATTRIBUTE_3 = Items(
 # data
 name=endurance_attribute[2:0], 
 inventory_description="Increases weapon attack power.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 260,
@@ -688,6 +690,7 @@ SPEED_ATTRIBUTE_1 = Items(
 # data
 name=speed_attribute[0:0], 
 inventory_description="Weapons' speed bar fill up faster.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 260,
@@ -700,6 +703,7 @@ SPEED_ATTRIBUTE_2 = Items(
 # data
 name=speed_attribute[1:0], 
 inventory_description="Weapons' speed bar fill up faster.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 260,
@@ -712,6 +716,7 @@ SPEED_ATTRIBUTE_3 = Items(
 # data
 name=speed_attribute[2:0], 
 inventory_description="Weapons' speed bar fill up faster.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 260,
@@ -726,6 +731,7 @@ MAGICAL_POWER_ATTRIBUTE_1 = Items(
 # data
 name=magical_power_attribute[0:0], 
 inventory_description="Increases effect of attributes.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 260,
@@ -738,6 +744,7 @@ MAGICAL_POWER_ATTRIBUTE_2 = Items(
 # data
 name=magical_power_attribute[1:0], 
 inventory_description="Increases effect of attributes.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 260,
@@ -750,6 +757,7 @@ MAGICAL_POWER_ATTRIBUTE_3 = Items(
 # data
 name=magical_power_attribute[2:0], 
 inventory_description="Increases effect of attributes.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 260,
@@ -764,6 +772,7 @@ FIRE_ATTRIBUTE = Items(
 # data
 name=fire_attribute[0], 
 inventory_description="Gives weapons the fire attribute.",
+effect=None,
 hp_restore= None,
 whp_restore= None,
 buy_price= 300,
@@ -776,6 +785,7 @@ ICE_ATTRIBUTE = Items(
 # data
 name=ice_attribute[0], 
 inventory_description="	Gives weapons the ice attribute.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 300,
@@ -788,6 +798,7 @@ THUNDER_ATTRIBUTE = Items(
 # data
 name=thunder_attribute[0], 
 inventory_description="	Gives weapons the thunder attribute.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 300,
@@ -800,6 +811,7 @@ WIND_ATTRIBUTE = Items(
 # data
 name=wind_attribute[0], 
 inventory_description="	Gives weapons the wind attribute.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 300,
@@ -812,6 +824,7 @@ HOLY_ATTRIBUTE = Items(
 # data
 name=holy_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 300,
@@ -824,6 +837,7 @@ DRAGON_SLAYER_ATTRIBUTE = Items(
 # data
 name=dragon_slayer_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 300,
@@ -836,6 +850,7 @@ UNDEAD_BUSTER_ATTRIBUTE = Items(
 # data
 name=undead_buster_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 300,
@@ -848,6 +863,7 @@ SEA_KILLER_ATTRIBUTE = Items(
 # data
 name=sea_killer_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 300,
@@ -860,6 +876,7 @@ STONE_BREAKER_ATTRIBUTE = Items(
 # data
 name=stone_breaker_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 300,
@@ -872,6 +889,7 @@ PLANT_BUSTER_ATTRIBUTE = Items(
 # data
 name=plant_buster_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 300,
@@ -884,6 +902,7 @@ BEAST_HUNTER_ATTRIBUTE = Items(
 # data
 name=beast_hunter_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 300,
@@ -896,6 +915,7 @@ SKY_HUNTER_ATTRIBUTE = Items(
 # data
 name=sky_hunter_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 300,
@@ -908,6 +928,7 @@ METAL_BREAKER_ATTRIBUTE = Items(
 # data
 name=metal_breaker_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 300,
@@ -920,6 +941,7 @@ MIMIC_BREAKER_ATTRIBUTE = Items(
 # data
 name=mimic_breaker_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 300,
@@ -932,6 +954,7 @@ MAGE_SLAYER_ATTRIBUTE = Items(
 # data
 name=mage_slayer_attribute[0], 
 inventory_description="	Gives weapons the holy attribute.",
+effect=None,
 hp_restore= None,
 whp_restore= None ,
 buy_price= 300,
@@ -946,6 +969,7 @@ CAVE_KEY =Items(
     
     name=CAVE_KEY, 
     inventory_description="Received from the Mayor at the start of the game to enter the Divine Beast Cave.",
+    effect=None,
     hp_restore= None,
     whp_restore= None ,
     buy_price= None,
@@ -958,6 +982,7 @@ CAVE_KEY =Items(
 HORNED_KEY_OBJ = Items(
     name=HORNED_KEY, 
     inventory_description="Received after the completion of Dran's windmill. Used to enter the boss room at the end of the Divine Beast Cave.",
+    effect=None,
     hp_restore= None,
     whp_restore= None ,
     buy_price= None,
@@ -969,6 +994,7 @@ HORNED_KEY_OBJ = Items(
 TREASURE_CHEST_KEY_OBJ = Items(
     name=TREASURE_CHEST_KEY,
     inventory_description="Used to unlock locked treasure chests, also bypasses traps.",
+    effect=None,
     hp_restore= None,
     whp_restore= None ,
     buy_price= None,
@@ -977,20 +1003,6 @@ TREASURE_CHEST_KEY_OBJ = Items(
     dps= None,
     attribute_buff= None,
     shop=None)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # item list, tuples, dictionaries
@@ -1099,90 +1111,3 @@ ATTRIBUTES = ( # attribute items
     METAL_BREAKER_ATTRIBUTE,
     MIMIC_BREAKER_ATTRIBUTE,
     MAGE_SLAYER_ATTRIBUTE)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
