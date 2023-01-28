@@ -298,18 +298,14 @@ def genesisgirs_bussin_iterator(iter: int):
                 print("A exception has occured. [The iterator exceeded the iteration limit!]")
                 pass
 
+# darkcloud main theme w/darkplayer
+DarkPlayer.dark_player_fx(filepath=r'GenesisGirLessonsVOL.4\Lessons\DarkCloud\resources\Audio Resources\MUSIC\Menu.wav', volume=0.5, x=-1,)
 
 # level 5 games header
 genesisgirs_bussin_iterator(2) # (ELOC)
 print('𝐥𝐞𝐯𝐞𝐥-𝟓'.center(100, ' '))
 genesisgirs_bussin_iterator(2) 
-time.sleep(2)
-
-# darkcloud main theme w/darkplayer
-DarkPlayer.dark_player_fx(
-    filepath=r'GenesisGirLessonsVOL.4\Lessons\DarkCloud\resources\Audio Resources\MUSIC\Menu.wav',
-    volume=0.2,
-    x=-1,)
+time.sleep(20)
 
 # remake by genesis header
 print("""
@@ -317,7 +313,7 @@ print("""
             █▀█   █▀▄ ██▄ █░▀░█ █▀█ █░█ ██▄   █▄█ ░█░   █▄█ ██▄ █░▀█ ██▄ ▄█ █ ▄█ █▄█ █ █▀▄  """)
 
 genesisgirs_bussin_iterator(2) # (ELOC)
-time.sleep(3) # program exec delay by (3) secs
+time.sleep(16) # program exec delay by (3) secs
 
 
 
@@ -332,7 +328,25 @@ print("""
                 ██████╔╝██║░░██║██║░░██║██║░╚██╗╚█████╔╝███████╗╚█████╔╝╚██████╔╝██████╔╝
                 ╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚══════╝░╚════╝░░╚═════╝░╚═════╝░   \n\n""")
 
-time.sleep(2)
-print('                             ᴀʟʟ ʀɪɢʜᴛs ʀᴇsᴇʀᴇᴠᴇᴅ ᴛᴏ sᴏɴʏ ᴇɴᴛᴇʀᴛᴀɪɴᴍᴇɴᴛ                    ')
+print('                              ᴀʟʟ ʀɪɢʜᴛs ʀᴇsᴇʀᴇᴠᴇᴅ ᴛᴏ sᴏɴʏ ᴇɴᴛᴇʀᴛᴀɪɴᴍᴇɴᴛ                    ')
 genesisgirs_bussin_iterator(2) # (ELOC)
-time.sleep(5) # program exec delay by (5) secs
+time.sleep(10) # program exec delay by (5) secs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

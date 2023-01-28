@@ -109,8 +109,6 @@ class Georama_Analysis:
     """
     
     # globals
-    global georama_analysis
-    global request_analysis
     global georama_percentage
     global request_percentage
     global georama_percentage_backup
@@ -283,4 +281,8 @@ class Georama_Analysis:
             logger.debug(f"Attempting to reset values of variables 'georama_percentage' and 'request_percentage' to 0. looping until satisfied, current attempts [{attempt_counter}]")
 
 # objects/constructors
-GEORAMA = Georama_Analysis()
+GEORAMA = Georama_Analysis(
+    
+    atla_creator='Fairy King',
+        georama_analysis=georama_percentage,
+            request_analysis=request_percentage)
