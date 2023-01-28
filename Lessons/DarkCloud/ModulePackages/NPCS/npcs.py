@@ -118,8 +118,7 @@ class Npc:
     CLAUDE = "Claude"
     
     
-    # NPC key item lists
-    MOTHER_ITEMS = [] # cave key must be created
+    # NPC key item lists 
     MAYOR_ITEMS = [CAVE_KEY.name, BREAD.name, TASTY_WATER.name, REPAIR_POWDER.name, ESCAPE_POWDER.name, ANTIDOTE_DRINK.name]
     CLAUDE_KEY_ITEMS = [CHEESE.name, SOAP.name]
     
@@ -131,30 +130,11 @@ class Npc:
     pass
 
 # objecti instances/constructors
-MOTHER_NPC = Npc(name=MOTHER, 
-    location=NORUNE_VILLAGE, 
-    family=[PLAYER_NICKNAME], 
-    key_items=MOTHER_ITEMS)
-ODD_GAFFER_NPC = Npc( name=ODD_GAFFER,
-    location=NORUNE_VILLAGE)
-MAYOR_NPC = Npc( name=MAYOR,
-    location=NORUNE_VILLAGE, 
-    key_items=MAYOR_ITEMS,)
-PIKE_NPC = Npc(name=PIKE, 
-    location=NORUNE_VILLAGE, 
-    family=[PAIGE])
-PAIGE_NPC = Npc(name=PAIGE, 
-    location=NORUNE_VILLAGE, 
-    family=[PIKE])
-MACHO = Npc(name= MACHO, 
-            location= NORUNE_VILLAGE, 
-            family=KOMACHO, 
-            key_items=None)
-KOMACHO = Npc(name= KOMACHO, 
-            location= NORUNE_VILLAGE, 
-            family=MACHO, 
-            key_items=None)
-CLAUDE = Npc(name=CLAUDE, 
-            location=NORUNE_VILLAGE,
-            family=None,
-            key_items=CLAUDE_KEY_ITEMS)
+MOTHER_NPC = Npc(name=MOTHER, location=NORUNE_VILLAGE, family=[PLAYER_NICKNAME], key_items=None)
+ODD_GAFFER_NPC = Npc(name=ODD_GAFFER, location=NORUNE_VILLAGE, family=None,key_items=None) # TODO create Odd Gaffer's key item's!
+MAYOR_NPC = Npc(name=MAYOR, location=NORUNE_VILLAGE, family=None, key_items=MAYOR_ITEMS,)
+PIKE_NPC = Npc(name=PIKE, location=NORUNE_VILLAGE, family=[PAIGE], key_items=None)
+PAIGE_NPC = Npc(name=PAIGE, location=NORUNE_VILLAGE, family=[PIKE],key_items=None)
+MACHO = Npc(name= MACHO, location= NORUNE_VILLAGE, family=KOMACHO, key_items=None)
+KOMACHO = Npc(name= KOMACHO, location= NORUNE_VILLAGE, family=MACHO, key_items=None)
+CLAUDE = Npc(name=CLAUDE, location=NORUNE_VILLAGE, family=None, key_items=CLAUDE_KEY_ITEMS)

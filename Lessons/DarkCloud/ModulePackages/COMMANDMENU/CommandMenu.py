@@ -241,9 +241,7 @@ class Weapons_Menu:
     import logging, logging.handlers
     
     # gloabls
-    global selected_weapon
-    global selected_weapon_attribute
-    global equipped_weapon_attribute
+    
     # variables
     selected_weapon = None
     selected_weapon_attribute = None
@@ -289,6 +287,9 @@ class Equip_Weapon:
         # docstring
         """ # __equip_wav__ 
         Equips the currently selected weapon to the player. This function can be used to equip a weapon to the player and plays equip.wav"""
+        
+        # reference global variable/const
+        global selected_weapon
         
         # render sound .wav!
         # file path
@@ -339,6 +340,10 @@ class Equip_Attributes:
         # docstring
         """# __equip_attr__ 
         equips the player with the currently selected attribute and plays the attach.wav"""
+        
+        # refer to global variable/const
+        global selected_weapon_attribute
+        
         # render sound .wav!
         # file path
         file_path = r"GenesisGirLessonsVOL.4\Lessons\DarkCloud\resources\Audio Resources\MENU FX\attach.wav" # wav file path

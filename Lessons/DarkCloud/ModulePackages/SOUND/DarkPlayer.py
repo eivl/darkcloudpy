@@ -83,6 +83,10 @@ class DarkPlayer:
                                         ⣷⠀⠀⠀⠀⠈⠿⠟⣁⣴⣾⣿⣿⠿⠿⣛⣋⣥⣶⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀ ⣿⡀
 
         """
+        
+        # global 
+        global logger
+        
         # import modules
         import pygame
         from pygame import mixer
@@ -158,6 +162,7 @@ class DarkPlayer:
                                         ⣷⠀⠀⠀⠀⠈⠿⠟⣁⣴⣾⣿⣿⠿⠿⣛⣋⣥⣶⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀ ⣿⡀
 
         """
+        
         # import modules
         import pygame
         from pygame import mixer
@@ -204,13 +209,10 @@ class DarkPlayer:
             sound, 
             loops=x, 
             maxtime=y, 
-            fade_ms=z
+            fade_ms=z) # begin sound playback play(loops=0, maxtime=0, fade_ms=0) -> Channel
 
-                                ) # begin sound playback play(loops=0, maxtime=0, fade_ms=0) -> Channel
-
-        # log info
-        logger.info(".wav rendered!")
-        pass
+        # [INFO] [20]
+        logger.info('.wav rendered')
 
 # object instance/constructor
 DP = DarkPlayer()

@@ -84,6 +84,8 @@ logger = logger()
 
 # import modules
 from dataclasses import dataclass, field
+import pydantic
+from typing import Optional
 from ModulePackages.ITEMS.items import *
 
 # Chest dataclasses
@@ -109,6 +111,13 @@ although the floor title will often contain a hint such as "Sweet, Scary Treasur
     # globals
     global treasure_chest_stock_item
     global miracle_chest_stock_item
+    global chest_stock_item
+    global treasure_chest_stock_item
+    global miracle_chest_stock_item
+    global MIMIC_CHEST
+    global CHEST
+    global TREASURE_CHEST
+    global MIRACLE_CHEST
     # <- insert more globals here
     
     
@@ -252,11 +261,11 @@ although the floor title will often contain a hint such as "Sweet, Scary Treasur
     chest_stock_item = None
     treasure_chest_stock_item = None
     miracle_chest_stock_item = None
-    MIMIC_CHEST = None # create an attack user event function
+    MIMIC_CHEST = None # TODO create an attack user event function
 
     # fields/attributes
-    stock_item: treasure_chest_stock_item = field()
-    chest_type: str = field(default_factory=CHEST)
+    stock_item: Optional[str] = field(default_factory=None)
+    chest_type: Optional[str] = field(default_factory=CHEST) 
     
     
     # class methods
@@ -288,8 +297,7 @@ although the floor title will often contain a hint such as "Sweet, Scary Treasur
 
 
 # object instances/constructors
-CHEST = Chest()
-TRESURE_CHEST = Chest()
-MIRACLE_CHEST = Chest()
-MIMIC_CHEST = Chest()
-pass
+CHEST = Chest(stock_item=chest_stock_item, chest_type=CHEST)
+TRESURE_CHEST = Chest(stock_item=treasure_chest_stock_item, chest_type=TREASURE_CHEST)
+MIRACLE_CHEST = Chest(stock_item=miracle_chest_stock_item, chest_type=MIMIC_CHEST)
+MIMIC_CHEST = Chest(stock_item=None, chest_type=MIMIC_CHEST)
