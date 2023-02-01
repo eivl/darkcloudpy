@@ -48,7 +48,7 @@ def logger(): # GenesisGir's typical logger preset! 🪵
     
     # create the logger and set severity
     logger = logging.getLogger(__name__)
-    logger.setLevel(logging.DEBUG) # set logger level
+    logger.setLevel(logging.INFO) # set logger level
 
     # create handles and set their severity
     
@@ -87,7 +87,7 @@ logger = logger()
 
 # dataclasses
 @dataclass
-class Allies(): # player attributes/elements
+class Allies: # player attributes/elements
     
     # docstring
     """The Allies class is responsible for keeping the allies's usernames, attributes, Levels, Experience points and much more like ablities.
