@@ -7,6 +7,7 @@ def logger(): # Genesis Gir's typical logger preset! 🪵
     
     # create the logger and set severity
     logger = logging.getLogger(__name__)
+    logger.propagate = False  # prevent events from being passed to the root logger
     logger.setLevel(logging.DEBUG) # set logger level
 
     # create handles and set their severity
@@ -19,10 +20,6 @@ def logger(): # Genesis Gir's typical logger preset! 🪵
     delay = False, 
     errors = None)
     file_handler.setLevel(logging.DEBUG) # severity level
-    
-    #Stream Handlers
-    stream_handler = logging.StreamHandler()
-    stream_handler.setLevel(logging.CRITICAL)
 
     
     # create formatter
@@ -31,12 +28,12 @@ def logger(): # Genesis Gir's typical logger preset! 🪵
 
     # add formatter to handles
     file_handler.setFormatter(formatter)
-    stream_handler.setFormatter(formatter)
-    
     
     # adding the handler
     logger.addHandler(file_handler)
-    logger.addHandler(stream_handler)
+    
+    # prevent logging events to stdout/stream by removing the handler
+    logger.removeHandler(logging.StreamHandler)
     
     return logger
     pass
@@ -136,7 +133,7 @@ class DarkPlayer:
     
     def dark_player_fx(filepath: str, volume: float = 0.2, x: int = -1, y: int = 0, z: int = 0):
         # docstring
-        """The dark player fx is a function that ommits sounds to play in the the program and has the same parameters as DP. filepath = .wav path. 
+        """The dark player fx is a function that emmits sounds to play in the the program and has the same parameters as DP. filepath = .wav path. 
         The volume parameter controls the volume of the song, the x = loop int, y = maxtime int, z = fadeout ms int.
 
 

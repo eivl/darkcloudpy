@@ -112,6 +112,7 @@ def logger(): # GenesisGir's typical logger preset! 🪵
     
     # create the logger and set severity
     logger = logging.getLogger(__name__)
+    logger.propagate = False  # prevent events from being passed to the root logger
     logger.setLevel(logging.DEBUG) # set logger level
 
     # create handles and set their severity
@@ -125,10 +126,6 @@ def logger(): # GenesisGir's typical logger preset! 🪵
     errors = None)
     file_handler.setLevel(logging.DEBUG) # severity level
     
-    # Stream Handlers
-    stream_handler = logging.StreamHandler()
-    stream_handler.setLevel(logging.CRITICAL)
-
     
     # create formatter
     formatter = logging.Formatter("%(asctime)s [%(name)s] [%(levelname)s] [Lvl:%(levelno)s] [%(funcName)s] [%(lineno)d] %(message)s",
@@ -136,12 +133,12 @@ def logger(): # GenesisGir's typical logger preset! 🪵
 
     # add formatter to handles
     file_handler.setFormatter(formatter)
-    stream_handler.setFormatter(formatter)
-    
-    
+
     # adding the handler
     logger.addHandler(file_handler)
-    logger.addHandler(stream_handler)
+    
+    # prevent logging events to stdout/stream by removing the handler
+    logger.removeHandler(logging.StreamHandler)
     
     return logger
     pass
@@ -189,9 +186,8 @@ from ModulePackages.MONSTERS.monsters import *
 from ModulePackages.NPCS.npcs import *
 from ModulePackages.SOUND.darkplayer import DarkPlayer
 from ModulePackages.WEAPONS.weapons import *
+from ModulePackages.MAINMENU.mainmenu import MenuOptions
 
-# append path variables for dierectories
-sys.path.insert(1,r"GenesisGirLessonsVOL.4\Lessons\DarkCloud\ModulePackages")
 
 # define functions/methods
 def genesisgirs_bussin_iterator(iter: int):
@@ -332,21 +328,5 @@ print('                              ᴀʟʟ ʀɪɢʜᴛs ʀᴇsᴇʀᴇᴠᴇ�
 genesisgirs_bussin_iterator(2) # (ELOC)
 time.sleep(10) # program exec delay by (5) secs
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+MenuOptions.__menu__()
 

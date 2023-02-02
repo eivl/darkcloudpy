@@ -1,8 +1,3 @@
-# import modules
-from ModulePackages.LOCATIONS.dark_cloud_locations import *
-from ModulePackages.ITEMS.items import *
-from dataclasses import dataclass, field
-
 """ GenesisGirs typical logger preset
 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ 〤ㄖ〤ㄖ
 
@@ -50,7 +45,7 @@ def logger(): # GenesisGir's typical logger preset! 🪵
     
     # create the logger and set severity
     logger = logging.getLogger(__name__)
-    logger.setLevel(logging.INFO) # set logger level
+    logger.setLevel(logging.DEBUG) # set logger level
 
     # create handles and set their severity
     
@@ -87,26 +82,105 @@ def logger(): # GenesisGir's typical logger preset! 🪵
 # logger variable
 logger = logger()
 
-# dataclasses
-@dataclass
-class Boss:
+# import modules
+from dataclasses import dataclass, field
+# sub package module imports
+from ModulePackages.SOUND.darkplayer import *
+
+#define functions
+
+def Start():
+    # docstring
+    """ # __Start__()
+    (function)
+    The __Start__() is a opetion that allows the user to begin the game to the darkcloud storyline
+    """
+    # main menu select .wav render
+    DarkPlayer.dark_player_fx(filepath=r'GenesisGirLessonsVOL.4\Lessons\DarkCloud\resources\Audio Resources\MENU FX\select.wav', volume=0.2)
     
-    # global
-    global MASTER_JACKET
-    
-    # boss name
-    MASTER_JACKET = 'Master Jacket'
-    
-    # fields/attrs
-    habitat: str = field(default=DIVINE_BEAST_CAVE)
-    name: str = field(default=MASTER_JACKET)
-    type: str = field(default="Undead")
-    hit_points: int = field(default=75)
-    defend: bool = field(default=True)
-    boss_abs: int = field(default=5)
-    weakness: str = field(default=None)
-    item_steal: str or bool = field(default=REPAIR_POWDER) # this boss steals repair powder replace None with it when item created
     pass
 
-# dueling bosses object instants/constructors
-MASTER_JACKET = Boss()
+def Options():
+    # docstring
+    """ # __Options__():
+    (function)
+    The __Start__() is a option that allows the user to begin the game to the darkcloud storyline
+    """
+    
+    # main menu select .wav render
+    DarkPlayer.dark_player_fx(filepath=r'GenesisGirLessonsVOL.4\Lessons\DarkCloud\resources\Audio Resources\MENU FX\select.wav', volume=0.2)
+    
+    
+    
+    while True:
+        
+        
+        
+        resp = input()
+        
+        
+        
+        
+        pass
+    
+    pass
+
+# dataclasses for the menu
+@dataclass
+class MenuOptions:
+
+    global START
+    global OPTIONS
+    
+    # menu type/consts
+    START = 'Start'
+    OPTIONS = 'Options'
+    
+    # fields/attributes
+    name: str = field(default_factory=None)
+    type: str = field(default_factory=None)
+    
+    
+    
+    """"" <- @classmethod tips & tricks 
+    █▀▀ █░░ ▄▀█ █▀ █▀ █▀▄▀█ █▀▀ ▀█▀ █░█ █▀█ █▀▄ █▀
+    █▄▄ █▄▄ █▀█ ▄█ ▄█ █░▀░█ ██▄ ░█░ █▀█ █▄█ █▄▀ ▄█
+    """
+    
+    # classmethods
+    @classmethod
+    def __menu__():
+        
+        # docstring
+        """ # __menu__()
+        (function)
+        A simple menu GUI that makes the user choose a option route for story mode, continue story mode, Options
+        """
+        
+        print("""   
+                                                            {START} [s]
+                                                            {OPTIONS} [o]
+            """)
+        # flow control for user menu opetions
+        while True:
+            resp = input('Select an option!') # retrieve userinput values
+                
+            # various flows for different menu options (Start='s',Continue='c',Options='o')
+            if resp == 's':
+                pass
+                
+            elif resp == 'o':
+                pass
+            
+            else:
+                pass
+            
+        
+        
+        
+        pass
+    pass
+
+# object instances/constructors
+START = MenuOptions(START,START)
+OPTIONS = MenuOptions(OPTIONS,OPTIONS)

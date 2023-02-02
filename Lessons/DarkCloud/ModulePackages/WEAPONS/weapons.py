@@ -45,7 +45,7 @@ def logger(): # GenesisGir's typical logger preset! 🪵
     
     # create the logger and set severity
     logger = logging.getLogger(__name__)
-    logger.setLevel(logging.DEBUG) # set logger level
+    logger.setLevel(logging.INFO) # set logger level
 
     # create handles and set their severity
     
