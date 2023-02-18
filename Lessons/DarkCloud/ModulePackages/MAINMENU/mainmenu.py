@@ -84,8 +84,10 @@ logger = logger()
 
 # import modules
 from dataclasses import dataclass, field
+
 # sub package module imports
 from ModulePackages.SOUND.DarkPlayer import *
+from ModulePackages.MECHANICS.StoryDialogue import *
 
 #define functions
 
