@@ -51,7 +51,7 @@ def logger(): # GenesisGir's typical logger preset! 🪵
     
     # File Handlers
     file_handler = logging.FileHandler( 
-    filename = r"GenesisGirLessonsVOL.4\Lessons\DarkCloud\Log\logger.log",
+    filename = r"GenesisGir-Lessons-VOL.4\Lessons\DarkCloud\Log\logger.log",
     mode = 'w', # filemode 
     encoding = 'utf-8', # set encoding format
     delay = False, 
@@ -85,7 +85,7 @@ logger = logger()
 # import modules
 from dataclasses import dataclass, field
 # sub package module imports
-from ModulePackages.SOUND.darkplayer import *
+from ModulePackages.SOUND.DarkPlayer import *
 
 #define functions
 
@@ -96,7 +96,7 @@ def Start():
     The __Start__() is a opetion that allows the user to begin the game to the darkcloud storyline
     """
     # main menu select .wav render
-    DarkPlayer.dark_player_fx(filepath=r'GenesisGirLessonsVOL.4\Lessons\DarkCloud\resources\Audio Resources\MENU FX\select.wav', volume=0.2)
+    DarkPlayer.dark_player_fx(filepath=r'GenesisGir-Lessons-VOL.4\Lessons\DarkCloud\resources\Audio Resources\MENU FX\select.wav', volume=0.2)
     
     pass
 
@@ -108,7 +108,7 @@ def Options():
     """
     
     # main menu select .wav render
-    DarkPlayer.dark_player_fx(filepath=r'GenesisGirLessonsVOL.4\Lessons\DarkCloud\resources\Audio Resources\MENU FX\select.wav', volume=0.2)
+    DarkPlayer.dark_player_fx(filepath=r'GenesisGir-Lessons-VOL.4\Lessons\DarkCloud\resources\Audio Resources\MENU FX\select.wav', volume=0.2)
     
     
     
