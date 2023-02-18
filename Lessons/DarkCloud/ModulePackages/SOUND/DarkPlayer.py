@@ -52,7 +52,6 @@ class DarkPlayer:
     """
     
     # class methods
-    @classmethod
     def dark_player_ost(filepath: str, volume: float = 0.2, x: int = -1, y: int = 0, z: int = 0):
         # docstring
         """The dark player is a function that ommits music to play in the backround of the the program and has a parameter called 'filepath'
@@ -81,7 +80,7 @@ class DarkPlayer:
 
         """
         
-        # global 
+        # globals
         global logger
         
         # import modules
@@ -95,7 +94,7 @@ class DarkPlayer:
         pygame.mixer.init()
 
         # create sound buffer object
-        song = pygame.mixer.music(path) # Create a new Sound object from a file or buffer object
+        song = pygame.mixer.music(path) 
 
         """ <- pygame.mixer.music docstring
 
@@ -130,7 +129,6 @@ class DarkPlayer:
         logger.info(".wav rendered!")
         pass
 
-    
     def dark_player_fx(filepath: str, volume: float = 0.2, x: int = -1, y: int = 0, z: int = 0):
         # docstring
         """The dark player fx is a function that emmits sounds to play in the the program and has the same parameters as DP. filepath = .wav path. 
