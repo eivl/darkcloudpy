@@ -119,7 +119,7 @@ def logger(): # GenesisGir's typical logger preset! 🪵
     
     # File Handlers
     file_handler = logging.FileHandler( 
-    filename = r"GenesisGirLessonsVOL.4\Lessons\DarkCloud\Log\logger.log",
+    filename = r"GenesisGir-Lessons-VOL.4\Lessons\DarkCloud\Log\logger.log",
     mode = 'w', # filemode 
     encoding = 'utf-8', # set encoding format
     delay = False, 
@@ -167,7 +167,7 @@ from pygame import mixer
 import py_compile # Generate byte-code files from Python source files  
 
 # append path variables for dierectories
-sys.path.insert(1,r"GenesisGirLessonsVOL.4\Lessons\DarkCloud\ModulePackages")
+sys.path.insert(1,r"GenesisGir-Lessons-VOL.4\Lessons\DarkCloud\ModulePackages")
 
 # sub packages imports
 from ModulePackages.ALLIES.Allies import *
@@ -184,7 +184,7 @@ from ModulePackages.PLAYER.Player import *
 from ModulePackages.LOCATIONS.dark_cloud_locations import *
 from ModulePackages.MONSTERS.monsters import *
 from ModulePackages.NPCS.npcs import *
-from ModulePackages.SOUND.darkplayer import DarkPlayer
+from ModulePackages.SOUND.DarkPlayer import DarkPlayer
 from ModulePackages.WEAPONS.weapons import *
 from ModulePackages.MAINMENU.mainmenu import MenuOptions
 
@@ -295,7 +295,7 @@ def genesisgirs_bussin_iterator(iter: int):
                 pass
 
 # darkcloud main theme w/darkplayer
-DarkPlayer.dark_player_fx(filepath=r'GenesisGirLessonsVOL.4\Lessons\DarkCloud\resources\Audio Resources\MUSIC\Menu.wav', volume=0.5, x=-1,)
+DarkPlayer.dark_player_fx(filepath=r'GenesisGir-Lessons-VOL.4\Lessons\DarkCloud\resources\Audio Resources\MUSIC\Menu.wav', volume=0.5, x=-1,)
 
 # level 5 games header
 genesisgirs_bussin_iterator(2) # (ELOC)
