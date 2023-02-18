@@ -106,6 +106,9 @@ class Npc:
     global MAYOR_ITEMS
     global MOTHER_ITEMS
     global CLAUDE_KEY_ITEMS
+    global DARK_GENIE
+    global WESTERN_DICTATOR
+    global CULT_LEADER
     
     # npc constants
     MOTHER = "Renee"
@@ -116,6 +119,9 @@ class Npc:
     MACHO = "Macho"
     KOMACHO = "Komacho"
     CLAUDE = "Claude"
+    WESTERN_DICTATOR = "Western Dictator"
+    CULT_LEADER = "Cult Leader"
+    DARK_GENIE = "Dark Genie"
     
     
     # NPC key item lists 
@@ -138,3 +144,6 @@ PAIGE_NPC = Npc(name=PAIGE, location=NORUNE_VILLAGE, family=[PIKE],key_items=Non
 MACHO = Npc(name= MACHO, location= NORUNE_VILLAGE, family=KOMACHO, key_items=None)
 KOMACHO = Npc(name= KOMACHO, location= NORUNE_VILLAGE, family=MACHO, key_items=None)
 CLAUDE = Npc(name=CLAUDE, location=NORUNE_VILLAGE, family=None, key_items=CLAUDE_KEY_ITEMS)
+WESTERN_DICTATOR = Npc(name=WESTERN_DICTATOR, location=None, family=None, key_items=None)
+CULT_LEADER = Npc(name=CULT_LEADER, location=None, family=None, key_items=None)
+DARK_GENIE = Npc(name=DARK_GENIE, location=None, family=None, key_items=None)

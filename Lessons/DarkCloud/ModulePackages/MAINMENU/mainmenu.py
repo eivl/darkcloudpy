@@ -84,11 +84,15 @@ logger = logger()
 
 # import modules
 from dataclasses import dataclass, field
+
 # sub package module imports
 from ModulePackages.SOUND.DarkPlayer import *
+from ModulePackages.MECHANICS.StoryDialogue import *
 
-#define functions
+# storymode module event imports
+from ModulePackages.STORYMODE.CeromonialEvent import *
 
+# define functions
 def Start():
     # docstring
     """ # __Start__()
@@ -98,6 +102,8 @@ def Start():
     # main menu select .wav render
     DarkPlayer.dark_player_fx(filepath=r'GenesisGir-Lessons-VOL.4\Lessons\DarkCloud\resources\Audio Resources\MENU FX\select.wav', volume=0.2)
     
+    # story mode event methods
+    ceromonyevent() # event 1
     pass
 
 def Options():
@@ -109,20 +115,6 @@ def Options():
     
     # main menu select .wav render
     DarkPlayer.dark_player_fx(filepath=r'GenesisGir-Lessons-VOL.4\Lessons\DarkCloud\resources\Audio Resources\MENU FX\select.wav', volume=0.2)
-    
-    
-    
-    while True:
-        
-        
-        
-        resp = input()
-        
-        
-        
-        
-        pass
-    
     pass
 
 # dataclasses for the menu
@@ -148,7 +140,6 @@ class MenuOptions:
     """
     
     # classmethods
-    @classmethod
     def __menu__():
         
         # docstring
@@ -161,19 +152,19 @@ class MenuOptions:
                                                             {START} [s]
                                                             {OPTIONS} [o]
             """)
-        # flow control for user menu opetions
+        # flow control for user menu options
         while True:
             resp = input('Select an option!') # retrieve userinput values
                 
-            # various flows for different menu options (Start='s',Continue='c',Options='o')
+            # various flows for different menu options (Start='s', Options='o')
             if resp == 's':
-                pass
-                
+              Start()
+
             elif resp == 'o':
-                pass
+              Options()
             
             else:
-                pass
+                continue
             
         
         

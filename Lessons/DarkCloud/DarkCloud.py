@@ -328,5 +328,5 @@ print('                              ᴀʟʟ ʀɪɢʜᴛs ʀᴇsᴇʀᴇᴠᴇ�
 genesisgirs_bussin_iterator(2) # (ELOC)
 time.sleep(10) # program exec delay by (5) secs
 
+# initialize menu (U/I)
 MenuOptions.__menu__()
-
