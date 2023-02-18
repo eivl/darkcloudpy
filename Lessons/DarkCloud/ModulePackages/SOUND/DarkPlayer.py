@@ -48,11 +48,11 @@ from dataclasses import dataclass, fields
 class DarkPlayer:
     """ # DarkPlayer
     DarkPlayer class contains the methods that are capable of transmitting music & sound effects within the program such as the 'dark_player_ost' method for
-    music and the 'dark_player_fx' responsible for ommiting sound fx.
+    music and the 'dark_player_fx' responsible for generating sound fx.
     """
     
     # class methods
-    def dark_player_ost(filepath: str, volume: float = 0.2, x: int = -1, y: int = 0, z: int = 0):
+    def dark_player_ost(filepath: str, vol: float = 0.2, l: int = 0, s: float = 0, f: int = 0):
         # docstring
         """The dark player is a function that ommits music to play in the backround of the the program and has a parameter called 'filepath'
         where the arguement should be the filepath to the .wav file you wish to playback. The volume parameter controls the volume of the
@@ -80,22 +80,25 @@ class DarkPlayer:
 
         """
         
-        # globals
-        global logger
-        
         # import modules
         import pygame
         from pygame import mixer
 
         # file path
-        path = filepath # wav file path
+        path = filepath
 
         # initalize mixer
         pygame.mixer.init()
 
         # create sound buffer object
-        song = pygame.mixer.music(path) 
+        song = path
+        
+        # load music 
+        pygame.mixer.music.load(song)
 
+        # set volume of music
+        pygame.mixer.music.set_volume(vol)
+        
         """ <- pygame.mixer.music docstring
 
     █▀█ █▄█ █▀▀ ▄▀█ █▀▄▀█ █▀▀ ░ █▀▄▀█ █ ▀▄▀ █▀▀ █▀█ ░ █▀▄▀█ █░█ █▀ █ █▀▀
@@ -113,23 +116,13 @@ class DarkPlayer:
     Consider using OGG file format for music as that can give slightly better compression than MP3 in most cases.
     """
 
-        # set volume for .wav
-        song.set_volume(volume) # set the playback volume for this Sound
-
-        # playback
-        pygame.mixer.music.play(
-            song, 
-            loops=x, 
-            maxtime=y, 
-            fade_ms=z
-
-                                ) # begin sound playback play(loops=0, maxtime=0, fade_ms=0) -> Channel
-
-        # log info
-        logger.info(".wav rendered!")
+        # playback play(loops=0, maxtime=0, fade_ms=0) -> Channel
+        pygame.mixer.music.play(loops=l, start=s, fade_ms=f) # begin sound playback play(loops=0, maxtime=0, fade_ms=0) -> Channel
         pass
 
-    def dark_player_fx(filepath: str, volume: float = 0.2, x: int = -1, y: int = 0, z: int = 0):
+
+
+    def dark_player_fx(filepath: str, volume: float = 0.2):
         # docstring
         """The dark player fx is a function that emmits sounds to play in the the program and has the same parameters as DP. filepath = .wav path. 
         The volume parameter controls the volume of the song, the x = loop int, y = maxtime int, z = fadeout ms int.
@@ -200,14 +193,8 @@ class DarkPlayer:
         sound.set_volume(volume) # set the playback volume for this Sound
 
         # playback
-        pygame.mixer.Sound.play(
-            sound, 
-            loops=x, 
-            maxtime=y, 
-            fade_ms=z) # begin sound playback play(loops=0, maxtime=0, fade_ms=0) -> Channel
-
-        # [INFO] [20]
-        logger.info('.wav rendered')
+        pygame.mixer.Sound.play(sound) # begin sound playback play(loops=0, maxtime=0, fade_ms=0) -> Channel
+        pass
 
 # object instance/constructor
 DP = DarkPlayer()
