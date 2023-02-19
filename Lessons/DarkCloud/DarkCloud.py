@@ -295,7 +295,7 @@ def genesisgirs_bussin_iterator(iter: int):
                 pass
 
 # darkcloud main theme w/darkplayer
-DarkPlayer.dark_player_fx(filepath=r'GenesisGir-Lessons-VOL.4\Lessons\DarkCloud\resources\Audio Resources\MUSIC\Menu.wav', volume=0.5, x=-1,)
+DarkPlayer.dark_player_ost(filepath=r'GenesisGir-Lessons-VOL.4\Lessons\DarkCloud\resources\Audio Resources\MUSIC\Menu.wav', vol=0.5)
 
 # level 5 games header
 genesisgirs_bussin_iterator(2) # (ELOC)
